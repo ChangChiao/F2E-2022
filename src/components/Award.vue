@@ -15,23 +15,19 @@ onMounted(() => {
     },
   });
 
-  tl.to(".cooperation", {
-    opacity: 1,
-    duration: 2,
-  })
+  tl.fromTo(
+    ".title-award",
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+    }
+  )
     .from(".join-group", {
       opacity: 0,
       translateY: 40,
       duration: 10,
     })
-    .to(
-      ".grass-group",
-      {
-        scale: 1,
-        opacity: 1,
-      },
-      "<"
-    )
     .to(".section-award", {
       opacity: 0,
     });
@@ -40,7 +36,7 @@ onMounted(() => {
 
 <template>
   <section class="pt-10 section section-award">
-    <div class="opacity-0 award">
+    <div class="title-award">
       <h2 class="title">還有比賽等著你！</h2>
     </div>
     <div class="justify-center w-2/3 mx-auto lg:flex">

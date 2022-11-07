@@ -39,9 +39,13 @@ onMounted(() => {
     opacity: 0,
     translateY: 40,
   })
-    .to(".title-sponsor", {
-      opacity: 1,
-    })
+    .fromTo(
+      ".title-sponsor",
+      { opacity: 0 },
+      {
+        opacity: 1,
+      }
+    )
     .to(".tree-group", {
       opacity: 1,
     });
@@ -52,7 +56,7 @@ onMounted(() => {
   <section class="pt-10 section section-sponsors">
     <h2 class="title title-sponsor">贊助單位</h2>
     <div
-      class="items-center justify-between pt-10 mx-auto opacity-100 sponsor-group lg:flex lg:w-2/3 lg:pt-20"
+      class="items-center justify-between pt-10 mx-auto sponsor-group lg:flex lg:w-2/3 lg:pt-20"
     >
       <div class="sponsor-1">
         <div class="sponsor-img">

@@ -39,7 +39,9 @@ onMounted(() => {
 
 <template>
   <section class="h-screen banner section-mur">
-    <div class="cloud fixed top-[30%] flex w-full items-center justify-between">
+    <div
+      class="cloud-mur fixed top-[30%] flex w-full items-center justify-between"
+    >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_03.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_07.png" alt="" />
     </div>

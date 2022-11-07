@@ -50,14 +50,22 @@ onMounted(() => {
       },
       "<"
     )
-    .to(".level-1", {
-      opacity: 1,
-      duration: 2,
-    })
-    .to(".level-2", {
-      opacity: 0.5,
-      duration: 2,
-    })
+    .fromTo(
+      ".level-1",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+      }
+    )
+    .fromTo(
+      ".level-2",
+      { opacity: 0 },
+      {
+        opacity: 0.5,
+        duration: 2,
+      }
+    )
     .to(".level-list", {
       yPercent: -50,
       duration: 8,
@@ -76,8 +84,11 @@ onMounted(() => {
       },
       "<"
     )
-    .to(
+    .fromTo(
       ".level-3",
+      {
+        opacity: 0,
+      },
       {
         opacity: 0.5,
       },
@@ -90,14 +101,10 @@ onMounted(() => {
     .to(".level-2", {
       opacity: 0.5,
     })
-    .to(
-      ".level-3",
-      {
-        opacity: 1,
-        duration: 4,
-      },
-      "+=4"
-    )
+    .to(".level-3", {
+      opacity: 1,
+      duration: 4,
+    })
     .to(".section-level", {
       opacity: 0,
     });
@@ -155,7 +162,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .level {
-  @apply flex items-start py-2 opacity-0;
+  @apply flex items-start py-2;
 }
 
 .level-content {

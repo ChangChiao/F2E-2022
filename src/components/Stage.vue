@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
-      //   start: "top 35%",
       trigger: ".section-stage",
       pin: true,
       scrub: true,
@@ -38,24 +37,20 @@ onMounted(() => {
     return;
   }
 
-  tl.to(".title-stage", {
-    opacity: 1,
-    duration: 2,
-  })
+  tl.fromTo(
+    ".title-stage",
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+    }
+  )
     .fromTo(".mask", { width: "100%" }, { width: 0 })
-    .from(".join-group", {
+    .from(".stage-group", {
       opacity: 0,
       translateY: 40,
       duration: 10,
     })
-    .to(
-      ".grass-group",
-      {
-        scale: 1,
-        opacity: 1,
-      },
-      "<"
-    )
     .to(".title-stage", {
       opacity: 0,
     });
@@ -64,12 +59,12 @@ onMounted(() => {
 
 <template>
   <section class="pt-10 section section-stage">
-    <div class="opacity-0 title-stage">
+    <div class="title-stage">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="flex items-center justify-between w-1/2 pt-20 mx-auto opacity-100 join-group"
+      class="flex items-center justify-between w-1/2 pt-20 mx-auto opacity-100 stage-group"
     >
       <div class="opacity-1 stage-1 lg:w-1/3">
         <div class="bg-secondary-normal">
