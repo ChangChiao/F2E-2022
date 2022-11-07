@@ -17,7 +17,7 @@ onMounted(() => {
     },
   });
 
-  if (isMobile) {
+  if (isMobile.value) {
     tl.from(".title-level", {
       yPercent: -100,
     })
@@ -67,13 +67,14 @@ onMounted(() => {
       }
     )
     .to(".level-list", {
-      yPercent: -50,
+      yPercent: -60,
       duration: 8,
     })
     .to(
       ".level-1",
       {
         opacity: 0,
+        duration: 2,
       },
       "<"
     )
@@ -94,16 +95,13 @@ onMounted(() => {
       },
       "<"
     )
-    // .to(".level-list", {
-    //   yPercent: -200,
-    //   duration: 2,
-    // })
     .to(".level-2", {
       opacity: 0.5,
+      duration: 2,
     })
     .to(".level-3", {
       opacity: 1,
-      duration: 4,
+      duration: 2,
     })
     .to(".section-level", {
       opacity: 0,
@@ -118,7 +116,7 @@ onMounted(() => {
       <h3 class="sub-title">各路廠商強強聯手</h3>
       <h3 class="sub-title">共同設計出接地氣的網頁互動挑戰關卡</h3>
     </div>
-    <div class="mx-auto h-[50vh] w-3/4 overflow-hidden border border-black">
+    <div class="mx-auto h-[50vh] w-3/4 overflow-hidden">
       <div class="opacity-0 level-list">
         <div class="level level-1">
           <img class="level-icon" src="@/assets/main/week_1.png" alt="" />
@@ -126,7 +124,7 @@ onMounted(() => {
             <h4 class="week">WEEK1</h4>
             <h5 class="level-name">The F2E 活動網站設計</h5>
             <div class="level-tag">
-              <span class="hash-tag">Parallax Scrolling</span>
+              <span class="mr-2 hash-tag">Parallax Scrolling</span>
               <span class="hash-tag">#版塊設計</span>
             </div>
             <button @click="toLink(1)" class="btn">查看關卡細節</button>
@@ -178,7 +176,7 @@ onMounted(() => {
 }
 
 .level-tag {
-  @apply block py-3 lg:inline;
+  @apply block py-3;
 }
 
 .week {

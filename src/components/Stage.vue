@@ -15,7 +15,7 @@ onMounted(() => {
     },
   });
 
-  if (isMobile) {
+  if (isMobile.value) {
     tl.from(".title-stage", {
       yPercent: -100,
     })
@@ -45,7 +45,7 @@ onMounted(() => {
       duration: 2,
     }
   )
-    .fromTo(".mask", { width: "100%" }, { width: 0 })
+    .fromTo(".line-mask", { width: "100%" }, { width: 0, duration: 3 }, 5)
     .from(".stage-group", {
       opacity: 0,
       translateY: 40,
@@ -104,9 +104,9 @@ onMounted(() => {
         />
       </div>
     </div>
-    <div class="for-mobile">
+    <div class="relative for-mobile">
       <img src="../assets/main/date_line.png" alt="" />
-      <div class="h-20 mask bg-secondary-normal"></div>
+      <div class="absolute top-0 h-20 line-mask bg-secondary-normal"></div>
     </div>
   </section>
 </template>

@@ -16,7 +16,7 @@ onMounted(() => {
     },
   });
 
-  if (isMobile) {
+  if (isMobile.value) {
     tl.from(".title-cooperation", {
       yPercent: -100,
     })
@@ -39,16 +39,13 @@ onMounted(() => {
     .from(".cooperation-group", {
       opacity: 0,
       translateY: 40,
-      duration: 10,
+      duration: 2,
     })
-    // .to(
-    //   ".grass-group",
-    //   {
-    //     scale: 1,
-    //     opacity: 1,
-    //   },
-    //   "<"
-    // )
+    .to(".cooperation-group", {
+      translateY: 40,
+      opacity: 0,
+      duration: 2,
+    })
     .to(".section-cooperation", {
       opacity: 0,
     });
@@ -62,7 +59,7 @@ onMounted(() => {
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-1/2"
+      class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-2/3"
     >
       <div class="cooperation-item cooperation-item-1">
         <img

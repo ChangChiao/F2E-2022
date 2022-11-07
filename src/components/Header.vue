@@ -8,14 +8,19 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "body",
       // markers: true,
-      start: "top 5%",
-      end: "bottom 20%",
+      // start: "top 5%",
+      // end: "bottom 20%",
       scrub: true,
     },
   });
-  tl.to(".header-logo", {
-    opacity: 1,
-  });
+  tl.to(
+    ".header-logo",
+    {
+      opacity: 1,
+      duration: 1,
+    },
+    "-=0.5"
+  );
 });
 </script>
 

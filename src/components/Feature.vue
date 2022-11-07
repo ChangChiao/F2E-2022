@@ -16,8 +16,8 @@ onMounted(() => {
       pinSpacing: false,
     },
   });
-
-  if (isMobile) {
+  console.log("isMobile", isMobile);
+  if (isMobile.value) {
     tl.from(".title-feature", {
       yPercent: -100,
     })
@@ -36,33 +36,42 @@ onMounted(() => {
     return;
   }
 
-  tl.fromTo(
-    ".title-feature",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-    }
-  )
-    .fromTo(
+  tl.to(".title-feature", {
+    opacity: 1,
+  })
+    .to(
       ".grass-group",
       {
-        opacity: 0,
-      },
-      {
-        scale: 1,
+        scale: 1.25,
         opacity: 1,
       },
       "<"
     )
     .fromTo(
       ".feature-1",
-      { opacity: 0 },
+      { xPercent: -100 },
       {
         opacity: 1,
         duration: 2,
-      }
+        xPercent: 0,
+      },
+      3
+    )
+    .to(
+      ".grass-group",
+      {
+        scale: 1,
+        opacity: 1,
+      },
+      "<"
+    )
+    .to(
+      ".feature-2",
+      {
+        opacity: 1,
+        duration: 2,
+      },
+      6
     )
     .to(
       ".grass-group",
@@ -73,34 +82,20 @@ onMounted(() => {
       "<"
     )
     .fromTo(
-      ".feature-2",
-      { opacity: 0 },
+      ".feature-3",
+      { xPercent: 100 },
       {
         opacity: 1,
         duration: 2,
-      }
+        xPercent: 0,
+      },
+      9
     )
     .to(
       ".grass-group",
       {
         scale: 0.5,
-        opacity: 0.4,
-      },
-      "<"
-    )
-    .fromTo(
-      ".feature-3",
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 2,
-      }
-    )
-    .to(
-      ".grass-group",
-      {
-        scale: 0.3,
-        opacity: 0,
+        opacity: 0.5,
       },
       "<"
     )
@@ -113,17 +108,17 @@ onMounted(() => {
 <template>
   <div class="pt-10 section section-feature">
     <div class="feature-inner">
-      <h2 class="title-feature feature">你是否也有以下困擾？</h2>
+      <h2 class="opacity-0 title title-feature">你是否也有以下困擾？</h2>
       <div class="items-center justify-between lg:flex">
-        <div class="feature-1">
+        <div class="opacity-0 feature-1">
           <h3 class="slogan">羨慕別人的酷酷網頁動畫？</h3>
           <img src="@/assets/main/question_1.png" alt="" />
         </div>
-        <div class="feature-2">
+        <div class="opacity-0 feature-2">
           <h3 class="slogan">滿足不了同事的許願？</h3>
           <img src="@/assets/main/question_2.png" alt="" />
         </div>
-        <div class="feature-3">
+        <div class="opacity-0 feature-3">
           <h3 class="slogan">動畫技能樹太雜無從下手？</h3>
           <img src="@/assets/main/question_3.png" alt="" />
         </div>

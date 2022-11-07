@@ -9,32 +9,59 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "body",
       // markers: true,
-      start: "top 20%",
-      end: "bottom 20%",
+      start: "top",
+      end: "bottom",
       scrub: true,
     },
   });
-  tl.to(".player-group", {
-    scale: 0.7,
-    bottom: 0,
-    // delay: 12,
-    duration: 5,
-  });
-  tl.to(".player-group", {
-    scale: 1,
-    bottom: 10,
-    duration: 10,
-  }).to(".player-group", {
-    scale: 0.7,
-    bottom: 0,
-    duration: 10,
-  });
+  tl.to(
+    ".player-group",
+    {
+      scale: 0.7,
+      bottom: 0,
+      // delay: 12,
+      // duration: 1,
+    },
+    0.5
+  )
+    .to(
+      ".player-group",
+      {
+        scale: 1,
+        bottom: 10,
+        // duration: 1,
+      },
+      1
+    )
+    .to(
+      ".player-group",
+      {
+        scale: 0.5,
+        bottom: 0,
+        duration: 1,
+      },
+      1.5
+    )
+    .to(
+      ".player-group",
+      {
+        scale: 1,
+        bottom: 0,
+        duration: 1,
+      },
+      2
+    )
+    .to(".player-group", {
+      scale: 0.5,
+      bottom: 0,
+      duration: 1,
+    });
 });
 </script>
 
 <template>
   <div
-    class="absolute bottom-0 left-0 right-0 z-50 mx-auto player-group lg:fixed lg:w-2/3"
+    class="absolute bottom-0 left-0 right-0 z-50 mx-auto origin-bottom player-group lg:fixed lg:w-2/3"
   >
     <div class="flex items-center justify-between" id="player">
       <img
