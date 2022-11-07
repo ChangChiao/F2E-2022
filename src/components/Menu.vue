@@ -43,7 +43,7 @@ const getImg = (icon) => {
   >
     <div
       @click="toggleMenu"
-      class="absolute top-0 -right-10 m-auto w-10 bg-[url('@/assets/btn/btn_burger_open.png')] hover:bg-[url('@/assets/btn/btn_burger_open_h.png')] lg:bottom-0"
+      class="absolute top-0 -right-10 m-auto h-10 w-10 bg-[url('@/assets/btn/btn_burger_open.png')] bg-contain bg-no-repeat hover:bg-[url('@/assets/btn/btn_burger_open_h.png')] lg:bottom-0"
       src="@/assets/btn/btn_burger_open_h.png"
     ></div>
     <!-- <img

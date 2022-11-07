@@ -7,6 +7,12 @@ import Count from "./banner/Count.vue";
 gsap.registerPlugin(ScrollTrigger);
 let player = null;
 
+const countList = [
+  { title: "前端工程師", count: "920" },
+  { title: "UI設計師", count: "110" },
+  { title: "團體組", count: "47" },
+];
+
 const handleMouseMove = (e) => {
   const valueX = Math.max((e.pageX * -1) / 12, 30);
   player.style.transform = `translateX(${valueX}px)`;
@@ -26,28 +32,40 @@ onMounted(() => {
   tl.to(".cloud", {
     scale: 0.8,
     opacity: 0.8,
-    duration: 2,
+    duration: 4,
   })
     .to(".cloud", {
       scale: 0.5,
       opacity: 0.5,
-      duration: 2,
+      duration: 4,
     })
     .to(".cloud", {
       scale: 0.2,
       opacity: 0,
+      duration: 4,
       display: "none",
-      duration: 2,
     })
-    .to(".bar", {
-      display: "none",
-      duration: 2,
-    })
+    .to(
+      ".count-list",
+      {
+        display: "none",
+        duration: 1,
+      },
+      6
+    )
+    .to(
+      ".bar",
+      {
+        display: "none",
+        duration: 1,
+      },
+      7
+    )
     .to(
       ".logo",
       {
         display: "none",
-        duration: 2,
+        duration: 1,
       },
       "<"
     );
@@ -61,7 +79,7 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
-    <div class="fixed left-0 right-0 w-1/3 mx-auto logo top-2">
+    <div class="logo fixed left-0 right-0 top-[5%] z-20 mx-auto w-1/2">
       <img class="" src="@/assets/logo/logo_text.png" alt="" />
       <h1
         class="w-2/3 h-10 p-2 mx-auto text-xl text-center text-white rounded-3xl bg-highlight-normal"
@@ -69,11 +87,15 @@ onMounted(() => {
         互動式網頁設計
       </h1>
     </div>
-    <ul class="items-center justify-between w-1/2 count-list lg:flex">
-      <li v-for="item in [920, 110, 41]" :key="item">
-        <Count :count="item" />
-      </li>
-    </ul>
-    <img class="fixed z-10 h-screen bar" src="@/assets/main/start.png" alt="" />
+    <div
+      class="count-list top-[40%] left-0 right-0 m-auto w-2/3 translate-x-10 items-center justify-between lg:fixed lg:flex"
+    >
+      <Count v-for="item in countList" :itemData="item" />
+    </div>
+    <img
+      class="fixed z-10 h-screen pointer-events-none bar"
+      src="@/assets/main/start.png"
+      alt=""
+    />
   </section>
 </template>

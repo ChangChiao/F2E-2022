@@ -13,54 +13,70 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".traffict-light",
       //   markers: true,
-      start: "top 35%",
+      start: "top 45%",
       end: "top 1%",
       scrub: true,
       // pin: true,
     },
   });
 
-  tl.timeScale(0.2)
-    .to(".ready", {
-      opacity: 0,
-      onComplete: finish,
-      onCompleteParams: ["READY??"],
-    })
+  tl.to(".ready", {
+    opacity: 0,
+    duration: 1,
+    onComplete: finish,
+    onCompleteParams: ["READY??"],
+  })
     .to(".yellow", {
       opacity: 0,
-      duration: 4,
+      duration: 1,
     })
     .to(
       ".green",
       {
         opacity: 0,
-        duration: 4,
       },
       "<"
     )
-    .to(".red", {
-      opacity: 0,
-      duration: 4,
-    })
-    .to(".yellow", {
-      opacity: 1,
-      duration: 4,
-    })
-    .to(".yellow", {
-      opacity: 0,
-      duration: 4,
-    })
-    .to(".green", {
-      opacity: 1,
-      duration: 4,
-      onComplete: finish,
-      onCompleteParams: ["GO!!"],
-    })
-    .to(".ready", {
-      opacity: 1,
-      duration: 4,
-      delay: 2,
-    })
+    .to(
+      ".red",
+      {
+        opacity: 0,
+        duration: 1,
+      },
+      2
+    )
+    .to(
+      ".yellow",
+      {
+        opacity: 1,
+      },
+      "<"
+    )
+    .to(
+      ".yellow",
+      {
+        opacity: 0,
+        duration: 1,
+      },
+      4
+    )
+    .to(
+      ".green",
+      {
+        opacity: 1,
+        onComplete: finish,
+        onCompleteParams: ["GO!!"],
+      },
+      "<"
+    )
+    .to(
+      ".ready",
+      {
+        opacity: 1,
+        delay: 2,
+      },
+      "<"
+    )
     .to(".traffict-light", {
       opacity: 0,
       onComplete: finish,
@@ -72,7 +88,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="traffict-light fixed right-0 top-[48%] z-20 w-[275px]">
+  <div
+    class="traffict-light fixed right-0 top-[48%] z-30 w-[275px] origin-right lg:scale-75 xl:scale-100"
+  >
     <div
       class="text-2xl font-bold tracking-wider text-center ready text-highlight-normal"
     >

@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="absolute bottom-0 left-0 right-0 z-50 mx-auto player-group lg:fixed lg:w-1/2"
+    class="absolute bottom-0 left-0 right-0 z-50 mx-auto player-group lg:fixed lg:w-2/3"
   >
     <div class="flex items-center justify-between" id="player">
       <img
