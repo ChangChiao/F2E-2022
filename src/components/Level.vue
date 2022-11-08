@@ -162,13 +162,25 @@ onMounted(() => {
 <style scoped>
 .level {
   @apply flex items-start py-2;
+  &-content {
+    @apply px-4;
+  }
+  &-icon {
+    @apply w-[160px];
+  }
+  &-name {
+    @apply text-3xl font-bold text-primary-normal;
+  }
+  &-tag {
+    @apply block py-3;
+  }
 }
 
-.level-content {
+/* .level-content {
   @apply px-4;
-}
+} */
 
-.level-icon {
+/* .level-icon {
   @apply w-[160px];
 }
 
@@ -178,7 +190,7 @@ onMounted(() => {
 
 .level-tag {
   @apply block py-3;
-}
+} */
 
 .week {
   @apply text-5xl font-bold tracking-wider text-highlight-normal;
