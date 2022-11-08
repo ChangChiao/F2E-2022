@@ -59,13 +59,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="pt-10 section section-stage">
+  <section class="section section-stage pt-10">
     <div class="title-stage" data-aos="fade-up">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="flex items-center justify-between w-1/2 pt-20 mx-auto opacity-100 stage-group"
+      class="stage-group mx-auto flex w-1/2 items-center justify-between pt-20 opacity-100"
     >
       <div class="opacity-1 stage-1 lg:w-1/3">
         <div class="bg-secondary-normal">
@@ -75,12 +75,12 @@ onMounted(() => {
           <p class="sub-title">截止前可修改報名組別</p>
         </div>
         <img
-          class="w-6 for-mobile"
+          class="for-mobile w-6"
           src="../assets/main/date_weekLine.png"
           alt=""
         />
       </div>
-      <div class="w-1/3 opacity-1 stage-2 lg:w-1/3">
+      <div class="opacity-1 stage-2 w-1/3 lg:w-1/3">
         <div class="bg-secondary-normal">
           <img class="w-24" src="../assets/main/date_start.png" alt="" />
           <h4 class="slogan">START</h4>
@@ -90,7 +90,7 @@ onMounted(() => {
         </div>
         <img class="w-6" src="../assets/main/date_weekLine.png" alt="" />
       </div>
-      <div class="w-1/3 opacity-1 stage-3 lg:w-1/3">
+      <div class="opacity-1 stage-3 w-1/3 lg:w-1/3">
         <div class="bg-secondary-normal">
           <img class="w-24" src="../assets/main/date_upload.png" alt="" />
           <h4 class="slogan">UPLOAD</h4>
@@ -99,21 +99,21 @@ onMounted(() => {
           <p class="remark">額外競賽： 主題豐厚獎金等著你</p>
         </div>
         <img
-          class="w-6 for-mobile"
+          class="for-mobile w-6"
           src="../assets/main/date_weekLine.png"
           alt=""
         />
       </div>
     </div>
-    <div class="relative for-mobile">
+    <div class="for-mobile relative">
       <img src="../assets/main/date_line.png" alt="" />
-      <div class="absolute top-0 h-20 line-mask bg-secondary-normal"></div>
+      <div class="line-mask absolute top-0 h-20 bg-secondary-normal"></div>
     </div>
   </section>
 </template>
 <style scoped>
 .slogan {
-  @apply pt-2 pb-2 text-center text-4xl font-bold tracking-wider text-highlight-normal;
+  @apply pt-2 pb-2 text-center text-4xl  tracking-wider text-highlight-normal;
 }
 .date {
   @apply rounded-2xl bg-primary-normal px-4 py-2 text-center text-xl text-white;

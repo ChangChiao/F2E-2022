@@ -54,13 +54,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pt-10 section section-cooperation">
-    <div class="opacity-0 title-cooperation" data-aos="fade-up">
+  <div class="section section-cooperation pt-10">
+    <div class="title-cooperation opacity-0" data-aos="fade-up">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-2/3 xl:w-1/2"
+      class="cooperation-group mx-auto items-center justify-between pt-20 opacity-100 lg:flex lg:w-2/3 xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1" data-aos="fade-right">
         <img
@@ -100,7 +100,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .identity {
-  @apply pt-2 text-center text-xl font-bold text-primary-normal;
+  @apply pt-2 text-center text-xl  text-primary-normal;
 }
 
 .cooperation-item {

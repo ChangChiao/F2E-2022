@@ -19,9 +19,6 @@ module.exports = {
           dark: "#CD331A",
         },
       },
-      fontFamily: {
-        cubic: ["GenJyuuGothic", "sans-serif"],
-      },
       fontSize: {
         "3xl": "1.75rem", // 28px
         "4xl": "2rem", // 32px

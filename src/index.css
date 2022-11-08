@@ -7,10 +7,13 @@
   src: url("/font/Cubic_11_1.013_R.woff") format("woff"),
     url("/font/Cubic_11_1.013_R.woff2") format("woff2"); */
   font-family: "GenJyuuGothic";
-  src: url("/font/GenJyuuGothic-Medium.woff2") format("woff2");
+  src: url("/font/GenJyuuGothic-Bold.woff2") format("woff2");
 }
 
 @layer base {
+  html {
+    font-family: GenJyuuGothic;
+  }
   body {
     @apply bg-secondary-normal;
   }
@@ -18,10 +21,10 @@
 
 @layer components {
   .title {
-    @apply mx-auto border-t-2 border-b-4  border-primary-normal bg-secondary-normal bg-contain bg-center  bg-no-repeat  pt-4 text-center text-5xl font-bold text-primary-normal lg:h-36 lg:w-2/3 lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] xl:h-36 xl:w-full xl:pt-2;
+    @apply mx-auto border-t-2 border-b-4  border-primary-normal bg-secondary-normal bg-contain bg-center  bg-no-repeat  pt-4 text-center text-5xl  text-primary-normal lg:h-36 lg:w-2/3 lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] xl:h-36 xl:w-full xl:pt-2;
   }
   .sub-title {
-    @apply text-center text-lg font-bold text-secondary-dark;
+    @apply text-center text-lg  text-secondary-dark;
   }
   .remark {
     @apply text-sm text-highlight-normal;
@@ -30,7 +33,7 @@
     @apply h-screen;
   }
   .hash-tag {
-    @apply mx-auto mt-5 w-[120px] rounded-2xl border-2  border-secondary-dark p-1 text-center font-bold text-secondary-dark;
+    @apply mx-auto mt-5 w-[120px] rounded-2xl border-2  border-secondary-dark p-1 text-center  text-secondary-dark;
   }
 
   .btn {
