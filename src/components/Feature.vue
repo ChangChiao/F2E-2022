@@ -10,7 +10,7 @@ onMounted(() => {
     scrollTrigger: {
       //   end: "top 30%",
       trigger: ".section-feature",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
       markers: true,
       pinSpacing: false,

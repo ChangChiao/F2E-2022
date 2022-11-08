@@ -3,7 +3,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import TraffictLight from "@/components/banner/TraffictLight.vue";
 import { onMounted } from "vue";
+import { useMedia } from "../hooks/useMedia";
 import Count from "./banner/Count.vue";
+const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 let player = null;
 
@@ -23,7 +25,7 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-banner",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
       pinSpacing: false,
     },

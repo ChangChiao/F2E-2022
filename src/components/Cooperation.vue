@@ -11,7 +11,7 @@ onMounted(() => {
     scrollTrigger: {
       //   start: "top 35%",
       trigger: ".section-cooperation",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });
@@ -59,7 +59,7 @@ onMounted(() => {
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-2/3"
+      class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-2/3 xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1">
         <img

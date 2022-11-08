@@ -12,7 +12,7 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-level",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });

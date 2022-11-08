@@ -9,7 +9,7 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-sponsors",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });
@@ -53,10 +53,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="section section-sponsors pt-10">
+  <section class="pt-10 section section-sponsors">
     <h2 class="title title-sponsor">贊助單位</h2>
     <div
-      class="sponsor-group mx-auto items-center justify-between pt-10 lg:flex lg:w-2/3 lg:pt-20"
+      class="items-center justify-between pt-10 mx-auto sponsor-group lg:flex lg:w-2/3 lg:pt-20"
     >
       <div class="sponsor-1">
         <div class="sponsor-img">
@@ -78,7 +78,7 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="tree-group fixed bottom-0 left-0 right-0 mx-auto flex w-2/3 scale-125 justify-between opacity-0"
+      class="fixed bottom-0 left-0 right-0 flex justify-between w-2/3 mx-auto scale-125 opacity-0 tree-group"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_04.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_08.png" alt="" />

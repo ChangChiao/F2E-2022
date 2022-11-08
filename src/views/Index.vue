@@ -21,8 +21,8 @@ import End from "@/components/End.vue";
   <div class="wrapper">
     <Header />
     <Menu />
-    <Player />
     <Banner />
+    <Player />
     <Feature />
 
     <Cooperation />

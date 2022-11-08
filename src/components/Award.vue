@@ -1,10 +1,8 @@
 <script setup>
 import gsap from "gsap";
-import JoinBtn from "./common/JoinBtn.vue";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { onMounted, ref } from "vue";
 gsap.registerPlugin(ScrollTrigger);
-const text = ref("READY?");
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {

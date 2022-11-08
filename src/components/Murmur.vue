@@ -1,15 +1,15 @@
 <script setup>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import TraffictLight from "@/components/banner/TraffictLight.vue";
 import { onMounted } from "vue";
-import JoinBtn from "./common/JoinBtn.vue";
+import { useMedia } from "../hooks/useMedia";
+const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-mur",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
       pinSpacing: false,
     },
