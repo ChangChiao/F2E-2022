@@ -9,8 +9,9 @@ onMounted(() => {
   if (!isMobile) return;
   const tl = gsap.timeline({
     scrollTrigger: {
-      //   end: "top 30%",
       trigger: ".section-feature",
+      // snap: [1, 2, 5, 7],
+      // end: "+=500",
       pin: true,
       scrub: true,
       markers: true,
@@ -24,22 +25,28 @@ onMounted(() => {
     })
       .from(".feature-1", {
         xPercent: 100,
-        duration: 2,
+        duration: 3,
       })
       .from(".feature-2", {
         opacity: 0,
-        duration: 2,
+        duration: 3,
       })
       .from(".feature-3", {
         xPercent: -100,
-        duration: 2,
+        duration: 3,
       });
     return;
   }
 
-  tl.to(".title-feature", {
-    opacity: 1,
-  })
+  tl.timeScale(0.5)
+    .to(
+      ".title-feature",
+      {
+        opacity: 1,
+        duration: 1,
+      },
+      1
+    )
     .to(
       ".grass-group",
       {
@@ -53,10 +60,10 @@ onMounted(() => {
       { xPercent: -100 },
       {
         opacity: 1,
-        duration: 2,
+        duration: 4,
         xPercent: 0,
-      },
-      3
+      }
+      // 2
     )
     .to(
       ".grass-group",
@@ -70,9 +77,9 @@ onMounted(() => {
       ".feature-2",
       {
         opacity: 1,
-        duration: 2,
-      },
-      6
+        duration: 4,
+      }
+      // 5
     )
     .to(
       ".grass-group",
@@ -87,11 +94,18 @@ onMounted(() => {
       { xPercent: 100 },
       {
         opacity: 1,
-        duration: 2,
+        duration: 4,
         xPercent: 0,
-      },
-      9
+      }
+      // 7
     )
+    // .addPause(10)
+    // .addLabel("blueGreenSpin", 4)
+    .set({}, {}, "+=4")
+    // .to(".feature-3", {
+    //   duration: 4,
+    //   opacity: 1,
+    // })
     .to(
       ".grass-group",
       {
@@ -102,6 +116,7 @@ onMounted(() => {
     )
     .to(".section-feature", {
       opacity: 0,
+      duration: 1,
     });
 });
 </script>

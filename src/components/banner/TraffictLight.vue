@@ -37,14 +37,11 @@ onMounted(() => {
       },
       "<"
     )
-    .to(
-      ".red",
-      {
-        opacity: 0,
-        duration: 1,
-      },
-      2
-    )
+    .set({}, {}, "+=4")
+    .to(".red", {
+      opacity: 0,
+      duration: 1,
+    })
     .to(
       ".yellow",
       {
@@ -52,14 +49,11 @@ onMounted(() => {
       },
       "<"
     )
-    .to(
-      ".yellow",
-      {
-        opacity: 0,
-        duration: 1,
-      },
-      4
-    )
+    .set({}, {}, "+=4")
+    .to(".yellow", {
+      opacity: 0,
+      duration: 1,
+    })
     .to(
       ".green",
       {
@@ -77,6 +71,7 @@ onMounted(() => {
       },
       "<"
     )
+    .set({}, {}, "+=4")
     .to(".traffict-light", {
       opacity: 0,
       onComplete: finish,
@@ -92,7 +87,7 @@ onMounted(() => {
     class="traffict-light fixed right-0 top-[48%] z-30 w-[275px] origin-right md:scale-50 lg:scale-75 xl:scale-100"
   >
     <div
-      class="ready text-center text-2xl tracking-wider text-highlight-normal"
+      class="text-2xl tracking-wider text-center ready text-highlight-normal"
     >
       {{ text }}
     </div>
