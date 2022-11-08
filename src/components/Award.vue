@@ -2,8 +2,11 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { onMounted, ref } from "vue";
+import { useMedia } from "../hooks/useMedia";
 gsap.registerPlugin(ScrollTrigger);
+const isMobile = useMedia();
 onMounted(() => {
+  if (!isMobile) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       //   start: "top 35%",

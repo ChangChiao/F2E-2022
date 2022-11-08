@@ -34,7 +34,10 @@ const getImg = (icon) => {
 </script>
 
 <template>
-  <div class="h-screen opacity-50 nav-mask bg-secondary-normal lg:hidden"></div>
+  <div
+    v-if="isShowMenu"
+    class="h-screen opacity-50 nav-mask bg-secondary-normal lg:hidden"
+  ></div>
   <nav
     :class="[
       'stop-0 fixed left-0 z-50 flex h-screen w-[150px] -translate-x-[150px] justify-center bg-primary-normal duration-500 lg:-translate-x-[120px]',

@@ -21,11 +21,12 @@ const handleMouseMove = (e) => {
 };
 
 onMounted(() => {
+  if (!isMobile) return;
   player = document.getElementById("player");
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-banner",
-      pin: !isMobile.value,
+      pin: true,
       scrub: true,
       pinSpacing: false,
     },
@@ -95,7 +96,7 @@ onMounted(() => {
       <Count v-for="item in countList" :itemData="item" />
     </div>
     <img
-      class="fixed z-10 h-screen pointer-events-none bar"
+      class="fixed z-10 h-screen pointer-events-none bar lg:hidden"
       src="@/assets/main/start.png"
       alt=""
     />

@@ -9,10 +9,11 @@ const toLink = (num) => {
   window.open(`https://2022.thef2e.com/news/week${num}`, "_blank");
 };
 onMounted(() => {
+  if (!isMobile) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-level",
-      pin: !isMobile.value,
+      pin: true,
       scrub: true,
     },
   });
@@ -111,7 +112,7 @@ onMounted(() => {
 
 <template>
   <section class="pt-10 section section-level">
-    <div class="opacity-0 title-level">
+    <div class="opacity-0 title-level" data-aos="fade-up">
       <h2 class="title">年度最強合作，三大主題來襲</h2>
       <h3 class="sub-title">各路廠商強強聯手</h3>
       <h3 class="sub-title">共同設計出接地氣的網頁互動挑戰關卡</h3>

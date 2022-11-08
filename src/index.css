@@ -18,7 +18,7 @@
 
 @layer components {
   .title {
-    @apply mx-auto h-24 w-2/3 border-t-2 border-b-4  border-primary-normal  bg-secondary-normal bg-contain bg-center bg-no-repeat pt-4 text-center text-3xl font-bold text-primary-normal lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] xl:h-20 xl:w-1/2 xl:pt-2;
+    @apply mx-auto border-t-2 border-b-4  border-primary-normal bg-secondary-normal bg-contain bg-center  bg-no-repeat  pt-4 text-center text-5xl font-bold text-primary-normal lg:h-36 lg:w-2/3 lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] xl:h-36 xl:w-full xl:pt-2;
   }
   .sub-title {
     @apply text-center text-lg font-bold text-secondary-dark;

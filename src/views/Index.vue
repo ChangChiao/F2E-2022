@@ -15,6 +15,14 @@ import Menu from "@/components/Menu.vue";
 import Murmur from "@/components/Murmur.vue";
 import Map from "@/components/layout/Map.vue";
 import End from "@/components/End.vue";
+import { useMedia } from "../hooks/useMedia";
+import AOS from "aos";
+const isMobile = useMedia();
+onMounted(() => {
+  if (isMobile) {
+    AOS.init();
+  }
+});
 </script>
 
 <template>

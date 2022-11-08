@@ -7,10 +7,11 @@ import { onMounted } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
+  if (!isMobile) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-stage",
-      pin: !isMobile.value,
+      pin: true,
       scrub: true,
     },
   });
@@ -59,7 +60,7 @@ onMounted(() => {
 
 <template>
   <section class="pt-10 section section-stage">
-    <div class="title-stage">
+    <div class="title-stage" data-aos="fade-up">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>

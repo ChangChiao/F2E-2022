@@ -6,11 +6,12 @@ import { onMounted, ref } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
+  if (!isMobile) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       //   end: "top 30%",
       trigger: ".section-feature",
-      pin: !isMobile.value,
+      pin: true,
       scrub: true,
       markers: true,
       pinSpacing: false,
@@ -108,17 +109,19 @@ onMounted(() => {
 <template>
   <div class="pt-10 section section-feature">
     <div class="feature-inner">
-      <h2 class="opacity-0 title title-feature">你是否也有以下困擾？</h2>
+      <h2 class="opacity-0 title title-feature" data-aos="fade-up">
+        你是否也有以下困擾？
+      </h2>
       <div class="items-center justify-between lg:flex">
-        <div class="opacity-0 feature-1">
+        <div class="opacity-0 feature-1" data-aos="fade-right">
           <h3 class="slogan">羨慕別人的酷酷網頁動畫？</h3>
           <img src="@/assets/main/question_1.png" alt="" />
         </div>
-        <div class="opacity-0 feature-2">
+        <div class="opacity-0 feature-2" data-aos="fade-down">
           <h3 class="slogan">滿足不了同事的許願？</h3>
           <img src="@/assets/main/question_2.png" alt="" />
         </div>
-        <div class="opacity-0 feature-3">
+        <div class="opacity-0 feature-3" data-aos="fade-left">
           <h3 class="slogan">動畫技能樹太雜無從下手？</h3>
           <img src="@/assets/main/question_3.png" alt="" />
         </div>

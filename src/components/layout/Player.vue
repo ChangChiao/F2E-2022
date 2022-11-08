@@ -2,8 +2,9 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { onMounted } from "vue";
+import { useMedia } from "../../hooks/useMedia";
 gsap.registerPlugin(ScrollTrigger);
-
+const isMobile = useMedia();
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -14,13 +15,29 @@ onMounted(() => {
       scrub: true,
     },
   });
+  if (isMobile) {
+    tl.to(
+      ".player-group",
+      {
+        scale: 0.3,
+        bottom: 0,
+      },
+      0.5
+    ).to(
+      ".player-group",
+      {
+        scale: 0.5,
+        bottom: 0,
+      },
+      3
+    );
+    return;
+  }
   tl.to(
     ".player-group",
     {
       scale: 0.7,
       bottom: 0,
-      // delay: 12,
-      // duration: 1,
     },
     0.5
   )
@@ -61,7 +78,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="absolute bottom-0 left-0 right-0 z-50 mx-auto origin-bottom player-group lg:fixed lg:w-2/3 xl:w-1/2"
+    class="fixed bottom-0 left-0 right-0 z-50 mx-auto origin-bottom player-group lg:fixed lg:w-2/3 xl:w-1/2"
   >
     <div class="flex items-center justify-between" id="player">
       <img

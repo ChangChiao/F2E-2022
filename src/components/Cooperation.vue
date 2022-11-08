@@ -7,11 +7,12 @@ import { onMounted } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
+  if (!isMobile) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       //   start: "top 35%",
       trigger: ".section-cooperation",
-      pin: !isMobile.value,
+      pin: true,
       scrub: true,
     },
   });
@@ -54,14 +55,14 @@ onMounted(() => {
 
 <template>
   <div class="pt-10 section section-cooperation">
-    <div class="opacity-0 title-cooperation">
+    <div class="opacity-0 title-cooperation" data-aos="fade-up">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
       class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-2/3 xl:w-1/2"
     >
-      <div class="cooperation-item cooperation-item-1">
+      <div class="cooperation-item cooperation-item-1" data-aos="fade-right">
         <img
           class="lg:hidden"
           src="@/assets/character/character_f2e.png"
@@ -72,7 +73,7 @@ onMounted(() => {
           <h4 class="identity">前端工程師</h4>
         </div>
       </div>
-      <div class="cooperation-item cooperation-item-2">
+      <div class="cooperation-item cooperation-item-2" data-aos="fade-left">
         <div>
           <JoinBtn :isHover="true" />
           <h4 class="identity">UI設計師</h4>
@@ -83,7 +84,7 @@ onMounted(() => {
           alt=""
         />
       </div>
-      <div class="cooperation-item cooperation-item-3">
+      <div class="cooperation-item cooperation-item-3" data-aos="fade-right">
         <img
           class="lg:hidden"
           src="@/assets/character/character_team.png"
