@@ -82,18 +82,17 @@ onMounted(() => {
   >
     <div class="flex items-center justify-between" id="player">
       <img
-        id="players"
-        class="player player1"
+        class="translate-y-3 player player-1"
         src="@/assets/character/character_f2e.gif"
         alt=""
       />
       <img
-        class="player player2"
+        class="player player-2"
         src="@/assets/character/character_ui.gif"
         alt=""
       />
       <img
-        class="player player3"
+        class="translate-y-3 player player-3"
         src="@/assets/character/character_team.gif"
         alt=""
       />
@@ -104,17 +103,29 @@ onMounted(() => {
 
 <style scoped>
 .player {
-  @apply relative z-10 w-1/3;
+  @apply relative z-10 w-1/3 duration-100;
 }
 .offset-left {
-  .player1 {
+  .player-1 {
     @apply -translate-x-3;
   }
-  .player2 {
+  .player-2 {
     @apply -translate-x-2;
   }
-  .player3 {
-    @apply -translate-x-4;
+  .player-3 {
+    @apply translate-x-4;
+  }
+}
+
+.offset-right {
+  .player-1 {
+    @apply -translate-x-5;
+  }
+  .player-2 {
+    @apply translate-x-3;
+  }
+  .player-3 {
+    @apply translate-x-2;
   }
 }
 </style>

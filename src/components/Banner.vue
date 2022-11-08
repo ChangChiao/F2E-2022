@@ -8,6 +8,7 @@ import Count from "./banner/Count.vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 let player = null;
+let windowWidth = 0;
 
 const countList = [
   { title: "前端工程師", count: "920" },
@@ -16,13 +17,21 @@ const countList = [
 ];
 
 const handleMouseMove = (e) => {
-  const valueX = Math.max((e.pageX * -1) / 12, 30);
-  player.style.transform = `translateX(${valueX}px)`;
+  const valueX = e.clientX;
+  const isLeft = valueX <= windowWidth;
+  if (isLeft) {
+    player.classList.add("offset-left");
+    player.classList.remove("offset-right");
+  } else {
+    player.classList.add("offset-right");
+    player.classList.remove("offset-left");
+  }
 };
 
 onMounted(() => {
   if (!isMobile) return;
   player = document.getElementById("player");
+  windowWidth = window.innerHeight / 2;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-banner",
