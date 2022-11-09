@@ -26,19 +26,19 @@ onUnmounted(() => {
       class="loading-group absolute top-0 bottom-0 left-0 right-0 m-auto h-[200px] w-[400px]"
     >
       <div class="player-group mx-auto w-[200px]">
-        <div class="flex items-center justify-between" id="player">
+        <div class="flex items-center justify-between">
           <img
-            class="translate-y-1 player player-1"
+            class="translate-y-1 player-loading player-1"
             src="@/assets/character/character_f2e.gif"
             alt=""
           />
           <img
-            class="player player-2"
+            class="player-loading player-2"
             src="@/assets/character/character_ui.gif"
             alt=""
           />
           <img
-            class="translate-y-3 player player-3"
+            class="translate-y-3 player-loading player-3"
             src="@/assets/character/character_team.gif"
             alt=""
           />
@@ -59,7 +59,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.player {
+.player-loading {
   @apply relative z-10 w-1/3 duration-100;
 }
 

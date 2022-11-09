@@ -19,6 +19,7 @@ const countList = [
 const handleMouseMove = (e) => {
   const valueX = e.clientX;
   const isLeft = valueX <= windowWidth;
+  if (!player) return;
   if (isLeft) {
     player.classList.add("offset-left");
     player.classList.remove("offset-right");

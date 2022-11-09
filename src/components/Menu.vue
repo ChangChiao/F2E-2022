@@ -36,17 +36,19 @@ const getImg = (icon) => {
 <template>
   <div
     v-if="isShowMenu"
-    class="h-screen opacity-50 nav-mask bg-secondary-normal lg:hidden"
+    class="fixed z-40 w-screen h-screen opacity-50 nav-mask bg-secondary-normal lg:hidden"
   ></div>
   <nav
     :class="[
-      'stop-0 fixed left-0 z-40 flex h-screen w-[150px] -translate-x-[150px] justify-center bg-primary-normal duration-500 lg:-translate-x-[120px]',
-      { '-translate-x-[50px] lg:-translate-x-[20px]': isShowMenu },
+      'fixed top-0 left-0 z-50 flex h-screen w-[150px]  justify-center bg-primary-normal duration-500 ',
+      isShowMenu
+        ? '-translate-x-[20px] lg:-translate-x-[20px]'
+        : '-translate-x-[150px] lg:-translate-x-[140px]',
     ]"
   >
     <div
       @click="toggleMenu"
-      class="absolute top-0 -right-10 m-auto h-10 w-10 bg-[url('@/assets/btn/btn_burger_open.png')] bg-contain bg-no-repeat hover:bg-[url('@/assets/btn/btn_burger_open_h.png')] lg:bottom-0"
+      class="absolute top-5 -right-10 m-auto h-10 w-10 bg-[url('@/assets/btn/btn_burger_open.png')] bg-contain bg-no-repeat hover:bg-[url('@/assets/btn/btn_burger_open_h.png')] lg:top-0 lg:bottom-0"
       src="@/assets/btn/btn_burger_open_h.png"
     ></div>
     <!-- <img
@@ -57,7 +59,7 @@ const getImg = (icon) => {
     /> -->
     <ul class="pt-12 text-center">
       <li
-        class="pb-5 group text-secondary-normal"
+        class="pb-5 cursor-pointer group text-secondary-normal"
         v-for="(item, i) in menu"
         :key="`menu-${i}`"
       >

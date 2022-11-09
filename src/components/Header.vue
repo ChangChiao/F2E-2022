@@ -19,8 +19,8 @@ onMounted(() => {
       opacity: 1,
       duration: 1,
     },
-    "-=0.5"
-  );
+    1
+  ).set({}, {}, "+=10");
 });
 </script>
 
