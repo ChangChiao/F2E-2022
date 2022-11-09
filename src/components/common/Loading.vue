@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
 onMounted(() => {
-  document.body.style.position = "fixed";
+  document.body.style.overflow = "hidden";
   const tl = gsap.timeline();
   tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 })
     .to(".loading-group", {
@@ -13,14 +13,14 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  document.body.style.position = "";
+  document.body.style.overflow = "";
 });
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 z-50 w-screen h-screen overflow-hidden">
+  <div class="fixed top-0 left-0 z-50 w-full h-full overflow-hidden">
     <div
-      class="absolute top-0 bottom-0 left-0 right-0 w-screen h-screen m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
+      class="absolute top-0 bottom-0 left-0 right-0 w-full h-full m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
     ></div>
     <div
       class="loading-group absolute top-0 bottom-0 left-0 right-0 m-auto h-[200px] w-[400px]"

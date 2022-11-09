@@ -15,7 +15,7 @@ onMounted(() => {
       scrub: true,
     },
   });
-  if (isMobile) {
+  if (isMobile.value) {
     tl.to(
       ".player-group",
       {
@@ -53,7 +53,7 @@ onMounted(() => {
     .to(
       ".player-group",
       {
-        scale: 0.5,
+        scale: 0.7,
         bottom: 0,
         duration: 1,
       },
@@ -69,7 +69,7 @@ onMounted(() => {
       2
     )
     .to(".player-group", {
-      scale: 0.5,
+      scale: 0.7,
       bottom: 0,
       duration: 1,
     });
@@ -78,21 +78,21 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed bottom-0 left-0 right-0 z-40 mx-auto origin-bottom player-group lg:fixed lg:w-2/3 xl:w-1/2"
+    class="player-group fixed bottom-0 left-0 right-0 z-40 mx-auto max-w-[1000px] origin-bottom lg:fixed lg:w-2/3 xl:w-1/2"
   >
     <div class="flex items-center justify-between" id="player">
       <img
-        class="translate-y-3 player player-1"
+        class="translate-y-10 player player-1"
         src="@/assets/character/character_f2e.gif"
         alt=""
       />
       <img
-        class="player player-2"
+        class="translate-y-10 player player-2"
         src="@/assets/character/character_ui.gif"
         alt=""
       />
       <img
-        class="translate-y-3 player player-3"
+        class="translate-y-20 player player-3"
         src="@/assets/character/character_team.gif"
         alt=""
       />

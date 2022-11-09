@@ -21,7 +21,7 @@
 
 @layer components {
   .title {
-    @apply mx-auto border-t-2 border-b-4  border-primary-normal bg-secondary-normal bg-contain bg-center  bg-no-repeat  pt-4 text-center text-5xl  text-primary-normal lg:h-36 lg:w-2/3 lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] xl:h-36 xl:w-full xl:pt-2;
+    @apply mx-auto max-w-[800px]  border-t-2 border-b-4 border-primary-normal bg-secondary-normal  bg-contain  bg-center bg-no-repeat pt-4  text-center text-5xl text-primary-normal lg:h-36 lg:w-2/3 lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] lg:pt-7 xl:h-40 xl:w-full xl:pt-8;
   }
   .sub-title {
     @apply text-center text-lg  text-secondary-dark;
@@ -32,6 +32,11 @@
   .section {
     @apply h-screen;
   }
+
+  .wrapper {
+    @apply mx-auto max-w-[1200px];
+  }
+
   .hash-tag {
     @apply mx-auto mt-5 w-[120px] rounded-2xl border-2  border-secondary-dark p-1 text-center  text-secondary-dark;
   }
@@ -39,4 +44,8 @@
   .btn {
     @apply w-[180px] rounded-2xl bg-secondary-dark p-1 text-white hover:bg-highlight-normal;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  @import "aos/dist/aos.css";
 }

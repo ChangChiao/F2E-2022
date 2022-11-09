@@ -6,7 +6,7 @@ import { useMedia } from "../hooks/useMedia";
 gsap.registerPlugin(ScrollTrigger);
 const isMobile = useMedia();
 onMounted(() => {
-  if (!isMobile) return;
+  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       //   start: "top 35%",

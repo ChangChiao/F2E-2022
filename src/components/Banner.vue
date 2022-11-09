@@ -29,7 +29,7 @@ const handleMouseMove = (e) => {
 };
 
 onMounted(() => {
-  if (!isMobile) return;
+  if (isMobile.value) return;
   player = document.getElementById("player");
   windowWidth = window.innerHeight / 2;
   const tl = gsap.timeline({
@@ -86,12 +86,19 @@ onMounted(() => {
 
 <template>
   <section class="h-screen banner section-banner" @mousemove="handleMouseMove">
-    <TraffictLight />
+    <img
+      class="fixed left-0 right-0 z-10 hidden h-screen mx-auto pointer-events-none bar lg:block"
+      src="@/assets/main/start.png"
+      alt=""
+    />
+
     <div class="cloud fixed top-[30%] flex w-full items-center justify-between">
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
-    <div class="logo fixed left-0 right-0 top-[5%] z-20 mx-auto w-1/2">
+    <div
+      class="logo fixed left-0 right-0 top-[5%] z-20 mx-auto w-1/2 max-w-[600px]"
+    >
       <img class="" src="@/assets/logo/logo_text.png" alt="" />
       <h1
         class="w-2/3 h-10 p-2 mx-auto text-xl text-center text-white rounded-3xl bg-highlight-normal"
@@ -100,14 +107,10 @@ onMounted(() => {
       </h1>
     </div>
     <div
-      class="count-list top-[40%] left-0 right-0 m-auto w-2/3 translate-x-10 items-center justify-between lg:fixed lg:flex"
+      class="count-list top-[40%] left-0 right-0 m-auto w-2/3 max-w-[800px] -translate-y-10 items-center justify-between lg:fixed lg:flex"
     >
       <Count v-for="item in countList" :itemData="item" />
     </div>
-    <img
-      class="fixed z-10 h-screen pointer-events-none bar lg:hidden"
-      src="@/assets/main/start.png"
-      alt=""
-    />
+    <TraffictLight />
   </section>
 </template>

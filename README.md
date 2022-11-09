@@ -25,4 +25,3 @@
 - vite
 - tailwindcss
 - GSAP
-- AOS

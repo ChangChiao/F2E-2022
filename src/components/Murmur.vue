@@ -6,7 +6,7 @@ import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  if (!isMobile) return;
+  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-mur",
@@ -46,10 +46,7 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_03.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_07.png" alt="" />
     </div>
-    <h2
-      class="text-3xl opacity-0 title-mur text-highlight-normal"
-      data-aos="zoom-out"
-    >
+    <h2 class="text-3xl opacity-0 title-mur text-highlight-normal">
       區區修煉已經無法滿足了嗎？
     </h2>
   </section>

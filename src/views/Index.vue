@@ -21,17 +21,19 @@ import Loading from "@/components/common/Loading.vue";
 const isMobile = useMedia();
 const isShowLoading = ref(true);
 onMounted(() => {
-  if (isMobile) {
+  if (isMobile.value) {
+    console.log("8888");
     AOS.init();
   }
-  // setTimeout(() => {
-  //   isShowLoading.value = false;
-  // }, 3500);
+  setTimeout(() => {
+    isShowLoading.value = false;
+  }, 2000);
 });
 </script>
 
 <template>
-  <div class="wrapper">
+  <Loading v-if="isShowLoading" />
+  <div>
     <Header />
     <Menu />
     <Banner />
@@ -50,7 +52,6 @@ onMounted(() => {
     <End />
     <Map />
   </div>
-  <Loading v-if="isShowLoading" />
 </template>
 
 <style scoped></style>
