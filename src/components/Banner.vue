@@ -102,7 +102,7 @@ onMounted(() => {
     >
       <img class="" src="@/assets/logo/logo_text.png" alt="" />
       <h1
-        class="w-2/3 h-10 p-2 mx-auto text-xl text-center text-white rounded-3xl bg-highlight-normal"
+        class="w-2/3 p-2 mx-auto text-xl text-4xl tracking-wider text-center text-white rounded-3xl bg-highlight-normal"
       >
         互動式網頁設計
       </h1>

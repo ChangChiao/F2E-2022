@@ -36,11 +36,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="section section-award pt-10">
+  <section class="pt-10 section section-award">
     <div class="title-award">
       <h2 class="title">還有比賽等著你！</h2>
     </div>
-    <div class="mx-auto w-2/3 justify-center lg:flex">
+    <div class="justify-center w-2/3 mx-auto lg:flex">
       <img class="w-[375px]" src="@/assets/main/award.png" alt="" />
       <div class="doc">
         <div class="doc-item">
@@ -75,16 +75,16 @@ onMounted(() => {
 </template>
 <style scoped>
 .award-title {
-  @apply pb-2 text-xl  text-highlight-normal;
+  @apply pb-2 text-4xl  text-highlight-normal;
 }
 .money {
-  @apply text-xl text-highlight-normal;
+  @apply text-2xl text-highlight-normal;
 }
 .award-item {
-  @apply text-primary-normal;
+  @apply text-2xl text-primary-normal;
 }
 
 .doc-item {
-  @apply pb-4;
+  @apply pb-4 opacity-0;
 }
 </style>

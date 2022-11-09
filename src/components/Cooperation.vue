@@ -100,7 +100,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .identity {
-  @apply pt-2 text-center text-xl  text-primary-normal;
+  @apply pt-2 text-center text-4xl  text-primary-normal;
 }
 
 .cooperation-item {

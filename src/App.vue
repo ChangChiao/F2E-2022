@@ -17,6 +17,9 @@ const checkDevice = () => {
 onMounted(() => {
   windowWidth = window.innerWidth;
   window.onresize = checkDevice;
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 });
 </script>
 

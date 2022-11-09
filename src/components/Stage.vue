@@ -13,6 +13,7 @@ onMounted(() => {
       trigger: ".section-stage",
       pin: true,
       scrub: true,
+      pinSpacing: false,
     },
   });
 
@@ -46,7 +47,6 @@ onMounted(() => {
       duration: 2,
     }
   )
-    .to(".title-stage", { display: "none", duration: 2 })
     .fromTo(".line-mask", { width: "100%" }, { width: 0, duration: 3 }, 5)
     .fromTo(
       ".stage-item-1",
@@ -81,8 +81,8 @@ onMounted(() => {
         duration: 4,
       }
     )
-    .set({}, {}, "+=4")
-    .to(".title-stage", {
+    .set({}, {}, "+=6")
+    .to(".section-stage", {
       opacity: 0,
     });
 });
@@ -90,10 +90,6 @@ onMounted(() => {
 
 <template>
   <section class="pt-4 section section-stage">
-    <div class="title-stage">
-      <h2 class="title">本屆主題：互動式網頁設計</h2>
-      <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
-    </div>
     <div class="flex items-center justify-between w-3/4 mx-auto stage-group">
       <div class="translate-y-10 stage-item stage-item-1">
         <div class="stage-item-content">
@@ -135,16 +131,16 @@ onMounted(() => {
     </div>
     <div class="relative for-mobile">
       <img src="../assets/main/date_line.png" alt="" />
-      <div class="absolute top-0 h-32 line-mask bg-secondary-normal"></div>
+      <div class="absolute top-0 h-40 line-mask bg-secondary-normal"></div>
     </div>
   </section>
 </template>
 <style scoped>
 .slogan {
-  @apply pt-2 pb-2 text-center text-4xl  tracking-wider text-highlight-normal;
+  @apply pt-2 pb-2 text-center text-6xl  tracking-wider text-highlight-normal;
 }
 .date {
-  @apply mb-2 rounded-3xl bg-primary-normal px-4 py-2 text-center text-xl text-white;
+  @apply mb-2 rounded-3xl bg-primary-normal px-4 py-2 text-center text-4xl text-white;
 }
 .stage-item {
   @apply flex w-1/3 flex-col items-center opacity-0;

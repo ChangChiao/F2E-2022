@@ -27,7 +27,7 @@
     @apply text-center text-2xl  text-secondary-dark;
   }
   .remark {
-    @apply text-sm text-highlight-normal;
+    @apply text-lg text-highlight-normal;
   }
   .section {
     @apply h-screen;
@@ -38,10 +38,10 @@
   }
 
   .hash-tag {
-    @apply mx-auto mt-5 w-[120px] rounded-2xl border-2  border-secondary-dark p-1 text-center  text-secondary-dark;
+    @apply mx-auto mt-5 rounded-3xl border-2 border-secondary-dark  p-1 px-2 text-center text-2xl  text-secondary-dark;
   }
 
   .btn {
-    @apply w-[180px] rounded-2xl bg-secondary-dark p-1 text-white hover:bg-highlight-normal;
+    @apply w-[180px] rounded-2xl bg-secondary-dark p-1 text-lg text-white hover:bg-highlight-normal;
   }
 }

@@ -169,7 +169,7 @@ onMounted(() => {
     @apply w-[160px];
   }
   &-name {
-    @apply text-3xl  text-primary-normal;
+    @apply text-5xl  text-primary-normal;
   }
   &-tag {
     @apply block py-3;
@@ -193,6 +193,6 @@ onMounted(() => {
 } */
 
 .week {
-  @apply text-5xl  tracking-wider text-highlight-normal;
+  @apply text-6xl  tracking-wider text-highlight-normal;
 }
 </style>

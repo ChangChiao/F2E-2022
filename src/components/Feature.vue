@@ -11,10 +11,9 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".section-feature",
       // snap: [1, 2, 5, 7],
-      // end: "+=500",
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
       pinSpacing: false,
     },
   });
@@ -150,6 +149,6 @@ onMounted(() => {
 </template>
 <style scoped>
 .slogan {
-  @apply pb-2 text-center text-xl text-highlight-normal;
+  @apply pb-2 text-center text-4xl text-highlight-normal;
 }
 </style>
