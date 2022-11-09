@@ -81,7 +81,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="fixed bottom-5 left-7 hidden w-[220px] lg:block">
+  <div class="fixed bottom-5 left-7 z-40 hidden w-[220px] lg:block">
     <img src="../../assets/main/map.svg" alt="" />
     <img
       :style="{ top: y + 'px', left: x + 'px' }"

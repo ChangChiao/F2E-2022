@@ -66,7 +66,7 @@ onMounted(() => {
     </div>
     <div class="opacity-0 pattern">
       <img src="@/assets/logo/logo.png" alt="" />
-      <JoinBtn size="w-80" isShowHand="true" />
+      <JoinBtn size="w-80" :isShowHand="true" />
       <h3 class="text-highlight-normal">立即報名</h3>
     </div>
     <img

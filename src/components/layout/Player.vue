@@ -78,7 +78,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed bottom-0 left-0 right-0 z-50 mx-auto origin-bottom player-group lg:fixed lg:w-2/3 xl:w-1/2"
+    class="fixed bottom-0 left-0 right-0 z-40 mx-auto origin-bottom player-group lg:fixed lg:w-2/3 xl:w-1/2"
   >
     <div class="flex items-center justify-between" id="player">
       <img
@@ -105,6 +105,7 @@ onMounted(() => {
 .player {
   @apply relative z-10 w-1/3 duration-100;
 }
+
 .offset-left {
   .player-1 {
     @apply -translate-x-3;

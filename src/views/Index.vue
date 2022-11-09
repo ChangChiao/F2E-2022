@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import Question from "@/components/Question.vue";
 import Award from "@/components/Award.vue";
 import Banner from "@/components/Banner.vue";
@@ -17,11 +17,16 @@ import Map from "@/components/layout/Map.vue";
 import End from "@/components/End.vue";
 import { useMedia } from "../hooks/useMedia";
 import AOS from "aos";
+import Loading from "@/components/common/Loading.vue";
 const isMobile = useMedia();
+const isShowLoading = ref(true);
 onMounted(() => {
   if (isMobile) {
     AOS.init();
   }
+  // setTimeout(() => {
+  //   isShowLoading.value = false;
+  // }, 3500);
 });
 </script>
 
@@ -45,6 +50,7 @@ onMounted(() => {
     <End />
     <Map />
   </div>
+  <Loading v-if="isShowLoading" />
 </template>
 
 <style scoped></style>
