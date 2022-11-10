@@ -131,17 +131,17 @@ onMounted(() => {
 
 <template>
   <div class="pt-10 section section-feature">
-    <h2 class="opacity-0 title-feature">你是否也有以下困擾？</h2>
+    <h2 class="opacity-0 title title-feature">你是否也有以下困擾？</h2>
     <div class="items-center justify-between wrapper lg:flex">
-      <div class="opacity-0 feature-1">
+      <div class="opacity-0 feature feature-1">
         <h3 class="slogan">羨慕別人的酷酷網頁動畫？</h3>
         <img src="@/assets/main/question_1.png" alt="" />
       </div>
-      <div class="opacity-0 feature-2">
+      <div class="opacity-0 feature feature-2">
         <h3 class="slogan">滿足不了同事的許願？</h3>
         <img src="@/assets/main/question_2.png" alt="" />
       </div>
-      <div class="opacity-0 feature-3">
+      <div class="opacity-0 feature feature-3">
         <h3 class="slogan">動畫技能樹太雜無從下手？</h3>
         <img src="@/assets/main/question_3.png" alt="" />
       </div>

@@ -58,7 +58,7 @@ onMounted(() => {
       duration: 2,
     }
   )
-    .fromTo(".line-mask", { width: "100%" }, { width: 0, duration: 3 }, 5)
+    .fromTo(".line-mask", { width: "100%" }, { width: 0, duration: 4 })
     .fromTo(
       ".stage-item-1",
       {

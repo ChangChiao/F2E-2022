@@ -110,7 +110,7 @@ onMounted(() => {
       </h1>
     </div>
     <div
-      class="count-list top-[40%] left-0 right-0 m-auto flex w-2/3 max-w-[800px] -translate-y-10 flex-col items-center justify-between lg:fixed"
+      class="count-list top-[40%] left-0 right-0 m-auto flex max-w-[800px] -translate-y-10 flex-col items-center justify-between text-xl lg:fixed lg:w-2/3 lg:flex-row"
     >
       <Count v-for="item in countList" :itemData="item" />
     </div>

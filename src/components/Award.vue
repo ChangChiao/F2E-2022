@@ -74,7 +74,11 @@ onMounted(() => {
       <h2 class="title">還有比賽等著你！</h2>
     </div>
     <div class="justify-center w-2/3 mx-auto lg:flex">
-      <img class="trophy w-[375px]" src="@/assets/main/award.png" alt="" />
+      <img
+        class="trophy w-[375px] opacity-0"
+        src="@/assets/main/award.png"
+        alt=""
+      />
       <div class="doc">
         <div class="doc-item rule">
           <h3 class="award-title">評審機制</h3>

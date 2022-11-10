@@ -12,7 +12,9 @@ onMounted(() => {
       trigger: ".section-end",
       pin: !isMobile.value,
       scrub: true,
-      pinSpacing: false,
+      markers: true,
+      // pinSpacing: false,
+      // end: window.innerHeight * 2,
     },
   });
 
@@ -37,21 +39,44 @@ onMounted(() => {
     .to(".cloud-end", {
       scale: 0.2,
       opacity: 0,
-      display: "none",
       duration: 2,
     })
-    .to(".finish-bar", {
-      display: "none",
-      duration: 2,
-    })
-    .to(
+    // .fromTo(
+    //   ".finish-bar",
+    //   {
+    //     scale: 2,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     scale: 1,
+    //     duration: 2,
+    //   }
+    // )
+    .fromTo(
       ".line",
       {
-        // display: "none",
+        scale: 4,
+      },
+      {
+        opacity: 1,
+        scale: 1,
         duration: 2,
       },
       "<"
     )
+    .to(".left-line", {
+      xPercent: -5,
+      duration: 1,
+    })
+    .to(".line", {
+      scale: 1.5,
+      duration: 1,
+      opacity: 0,
+    })
+    .to(".finish-bar", {
+      duration: 1,
+      opacity: 0,
+    })
     .to(
       ".pattern",
       {
@@ -64,28 +89,33 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="h-screen banner section-end">
+  <section class="section banner section-end">
     <div
       class="cloud-end fixed top-[30%] hidden w-full items-center justify-between lg:flex"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
-    <div class="opacity-0 pattern">
+    <div class="w-1/2 opacity-0 pattern">
       <img src="@/assets/logo/logo.png" alt="" />
       <JoinBtn size="w-80" :isShowHand="true" />
       <h3 class="text-highlight-normal">立即報名</h3>
     </div>
     <img
-      class="fixed z-10 hidden h-screen finish-bar lg:block"
+      class="fixed top-0 left-0 right-0 z-10 hidden h-screen mx-auto origin-center finish-bar lg:block"
       src="@/assets/main/finish.png"
       alt=""
     />
     <div
-      class="line fixed left-0 right-0 top-[50%] z-50 mx-auto hidden h-20 w-full items-center justify-center lg:flex"
+      class="line fixed left-0 right-0 top-[50%] z-50 mx-auto hidden h-20 w-full origin-center items-center justify-center opacity-0 lg:flex"
     >
-      <img class="w-1/2 -mr-5" src="@/assets/main/finishLine_l.png" alt="" />
+      <img
+        class="w-1/2 -mr-8 left-line"
+        src="@/assets/main/finishLine_l.png"
+        alt=""
+      />
       <img class="w-1/2" src="@/assets/main/finishLine_r.png" alt="" />
     </div>
   </section>
+  <!-- <section class="section" /> -->
 </template>

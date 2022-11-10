@@ -121,6 +121,9 @@ onMounted(() => {
   </section>
 </template>
 <style scoped>
+.sponsor {
+  @apply opacity-0;
+}
 .sponsor-img {
   @apply h-[200px] w-[200px] overflow-hidden  rounded-[32px] border-8 border-primary-normal 2xl:h-[250px] 2xl:w-[250px];
 }

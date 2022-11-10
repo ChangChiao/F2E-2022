@@ -6,7 +6,6 @@ import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-mur",
@@ -34,7 +33,6 @@ onMounted(() => {
     .to(".cloud-mur", {
       scale: 0.2,
       opacity: 0,
-      display: "none",
       duration: 2,
     })
     .fromTo(
@@ -44,9 +42,14 @@ onMounted(() => {
         opacity: 1,
         duration: 4,
         scale: 1,
-      }
+      },
+      "<"
     )
-    .set({}, {}, "+=4");
+    .set({}, {}, "+=4")
+    .to(".title-mur", {
+      opacity: 0,
+      duration: 2,
+    });
 });
 </script>
 
