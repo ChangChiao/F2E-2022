@@ -20,7 +20,7 @@ onUnmounted(() => {
 <template>
   <div class="fixed top-0 left-0 z-50 w-full h-full overflow-hidden">
     <div
-      class="absolute top-0 bottom-0 left-0 right-0 w-full h-full m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
+      class="fixed top-0 bottom-0 left-0 right-0 w-full h-full m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
     ></div>
     <div
       class="loading-group absolute top-0 bottom-0 left-0 right-0 m-auto h-[200px] w-[400px]"
@@ -46,7 +46,7 @@ onUnmounted(() => {
         <img class="mx-auto -mt-4" src="@/assets/main/road.png" alt="" />
       </div>
       <div
-        class="loading mx-auto h-5 w-[400px] overflow-hidden rounded-2xl border-2 border-white"
+        class="loading mx-auto h-5 w-[90%] overflow-hidden rounded-2xl border-2 border-white lg:w-[400px]"
       >
         <div class="w-0 h-full loading-bar bg-primary-normal"></div>
       </div>

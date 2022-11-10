@@ -8,12 +8,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
-    <h4 class="pb-2 text-2xl text-center text-primary-normal">
+  <div class="text-xl lg:text-2xl">
+    <h4 class="pb-2 text-center text-primary-normal">
       {{ itemData.title }}
     </h4>
     <div
-      class="flex h-[42px] w-[135px] items-center justify-center rounded-3xl bg-primary-normal text-2xl tracking-wider text-white"
+      class="flex h-[42px] w-[135px] items-center justify-center rounded-3xl bg-primary-normal tracking-wider text-white"
     >
       <img class="w-6 mr-2" src="@/assets/ic/ic_users.svg" alt="" />
       {{ itemData.count }}

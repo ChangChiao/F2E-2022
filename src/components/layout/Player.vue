@@ -78,21 +78,21 @@ onMounted(() => {
 
 <template>
   <div
-    class="player-group fixed bottom-0 left-0 right-0 z-40 mx-auto max-w-[1000px] origin-bottom lg:fixed lg:w-2/3 xl:w-1/2"
+    class="player-group fixed bottom-0 left-0 right-0 z-40 mx-auto w-3/4 max-w-[1000px] origin-bottom lg:w-2/3 xl:w-1/2"
   >
     <div class="flex items-center justify-between" id="player">
       <img
-        class="translate-y-10 player player-1"
+        class="player player-1 lg:translate-y-10"
         src="@/assets/character/character_f2e.gif"
         alt=""
       />
       <img
-        class="translate-y-10 player player-2"
+        class="player player-2 lg:translate-y-10"
         src="@/assets/character/character_ui.gif"
         alt=""
       />
       <img
-        class="translate-y-20 player player-3"
+        class="player player-3 lg:translate-y-20"
         src="@/assets/character/character_team.gif"
         alt=""
       />

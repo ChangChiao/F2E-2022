@@ -43,11 +43,8 @@ onMounted(() => {
     <Cooperation />
     <Level />
     <Stage />
-    <!-- <TimeLine /> -->
     <Murmur />
     <Award />
-    <!-- <Speech /> -->
-    <!-- <Question /> -->
     <Sponsor />
     <End />
     <Map />

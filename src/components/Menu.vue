@@ -48,15 +48,13 @@ const getImg = (icon) => {
   >
     <div
       @click="toggleMenu"
-      class="absolute top-5 -right-10 m-auto h-10 w-10 bg-[url('@/assets/btn/btn_burger_open.png')] bg-contain bg-no-repeat hover:bg-[url('@/assets/btn/btn_burger_open_h.png')] lg:top-0 lg:bottom-0"
-      src="@/assets/btn/btn_burger_open_h.png"
+      :class="[
+        'absolute top-5 -right-10 m-auto h-10 w-10 bg-contain  bg-no-repeat lg:top-0  lg:bottom-0 lg:hover:bg-[url(\'@/assets/btn/btn_burger_open_h.png\')]',
+        isShowMenu
+          ? 'bg-[url(\'@/assets/btn/btn_burger_close.png\')]'
+          : 'bg-[url(\'@/assets/btn/btn_burger_open.png\')]',
+      ]"
     ></div>
-    <!-- <img
-      @click="toggleMenu"
-      class="absolute top-0 w-10 m-auto -right-10 lg:bottom-0"
-      src="@/assets/btn/btn_burger_open_h.png"
-      alt=""
-    /> -->
     <ul class="pt-12 text-center">
       <li
         class="pb-5 cursor-pointer group text-secondary-normal"

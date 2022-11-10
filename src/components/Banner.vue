@@ -98,17 +98,17 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
     <div
-      class="logo fixed left-0 right-0 top-[5%] z-20 mx-auto w-1/2 max-w-[600px]"
+      class="logo left-0 right-0 top-[5%] z-20 mx-auto w-1/2 max-w-[600px] lg:fixed"
     >
       <img class="" src="@/assets/logo/logo_text.png" alt="" />
       <h1
-        class="w-2/3 p-2 mx-auto text-xl text-4xl tracking-wider text-center text-white rounded-3xl bg-highlight-normal"
+        class="w-2/3 p-2 mx-auto text-xl tracking-wider text-center text-white rounded-3xl bg-highlight-normal lg:text-4xl"
       >
         互動式網頁設計
       </h1>
     </div>
     <div
-      class="count-list top-[40%] left-0 right-0 m-auto w-2/3 max-w-[800px] -translate-y-10 items-center justify-between lg:fixed lg:flex"
+      class="count-list top-[40%] left-0 right-0 m-auto flex w-2/3 max-w-[800px] -translate-y-10 flex-col items-center justify-between lg:fixed"
     >
       <Count v-for="item in countList" :itemData="item" />
     </div>
