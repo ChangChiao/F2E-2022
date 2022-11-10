@@ -53,7 +53,7 @@ onMounted(() => {
 <template>
   <section class="flex items-center justify-center h-screen banner section-mur">
     <div
-      class="cloud-mur fixed top-[30%] flex w-full items-center justify-between overflow-hidden opacity-0"
+      class="cloud-mur fixed top-[30%] hidden w-full items-center justify-between overflow-hidden opacity-0 lg:flex"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_03.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_07.png" alt="" />

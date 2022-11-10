@@ -6,15 +6,48 @@ import { useMedia } from "../hooks/useMedia";
 gsap.registerPlugin(ScrollTrigger);
 const isMobile = useMedia();
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       //   start: "top 35%",
       trigger: ".section-award",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });
+
+  if (isMobile.value) {
+    tl.from(".title-award", {
+      yPercent: -100,
+    })
+      .fromTo(
+        ".trophy",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      )
+      .fromTo(
+        ".rule",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      )
+      .fromTo(
+        ".prize",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      );
+    return;
+  }
 
   tl.fromTo(
     ".title-award",
@@ -41,9 +74,9 @@ onMounted(() => {
       <h2 class="title">還有比賽等著你！</h2>
     </div>
     <div class="justify-center w-2/3 mx-auto lg:flex">
-      <img class="w-[375px]" src="@/assets/main/award.png" alt="" />
+      <img class="trophy w-[375px]" src="@/assets/main/award.png" alt="" />
       <div class="doc">
-        <div class="doc-item">
+        <div class="doc-item rule">
           <h3 class="award-title">評審機制</h3>
           <ul>
             <li class="award-item">
@@ -56,7 +89,7 @@ onMounted(() => {
             </li>
           </ul>
         </div>
-        <div class="doc-item">
+        <div class="doc-item prize">
           <h3 class="award-title">獎項</h3>
           <ol>
             <li class="award-item">1. 初選佳作 共六十位 數位獎狀</li>

@@ -7,11 +7,10 @@ import { onMounted } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-stage",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
       pinSpacing: false,
     },
@@ -21,21 +20,33 @@ onMounted(() => {
     tl.from(".title-stage", {
       yPercent: -100,
     })
-      .from(".stage-1", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      })
-      .from(".stage-2", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      })
-      .from(".stage-3", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      });
+      .fromTo(
+        ".stage-1",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      )
+      .fromTo(
+        ".stage-2",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      )
+      .fromTo(
+        ".stage-3",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      );
     return;
   }
 

@@ -9,34 +9,43 @@ const toLink = (num) => {
   window.open(`https://2022.thef2e.com/news/week${num}`, "_blank");
 };
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-level",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });
 
   if (isMobile.value) {
-    tl.from(".title-level", {
-      yPercent: -100,
-    })
-      .from(".level-1", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      })
-      .from(".level-2", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      })
-      .from(".level-3", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      });
+    tl.fromTo(
+      ".title-level",
+      {
+        yPercent: -100,
+      },
+      { yPercent: 0, opacity: 1 }
+    )
+      .fromTo(
+        ".level-1",
+        {
+          yPercent: 100,
+        },
+        { yPercent: 0, opacity: 1, duration: 2 }
+      )
+      .fromTo(
+        ".level-2",
+        {
+          yPercent: 100,
+        },
+        { yPercent: 0, opacity: 1, duration: 2 }
+      )
+      .fromTo(
+        ".level-3",
+        {
+          yPercent: 100,
+        },
+        { yPercent: 0, opacity: 1, duration: 2 }
+      );
     return;
   }
 
@@ -51,22 +60,14 @@ onMounted(() => {
       },
       "<"
     )
-    .fromTo(
-      ".level-1",
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 2,
-      }
-    )
-    .fromTo(
-      ".level-2",
-      { opacity: 0 },
-      {
-        opacity: 0.5,
-        duration: 2,
-      }
-    )
+    .to(".level-1", {
+      opacity: 1,
+      duration: 2,
+    })
+    .to(".level-2", {
+      opacity: 0.5,
+      duration: 2,
+    })
     .to(".level-list", {
       yPercent: -60,
       duration: 8,
@@ -86,11 +87,8 @@ onMounted(() => {
       },
       "<"
     )
-    .fromTo(
+    .to(
       ".level-3",
-      {
-        opacity: 0,
-      },
       {
         opacity: 0.5,
       },
@@ -161,7 +159,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .level {
-  @apply flex items-start py-2;
+  @apply flex items-start py-2 opacity-0;
   &-content {
     @apply px-4;
   }

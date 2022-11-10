@@ -155,9 +155,6 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-.feature {
-  @apply w-full lg:w-1/3;
-}
 .slogan {
   @apply pb-2 text-center text-4xl text-highlight-normal;
 }

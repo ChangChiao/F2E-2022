@@ -7,15 +7,22 @@ import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-end",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
       pinSpacing: false,
     },
   });
+
+  if (isMobile.value) {
+    tl.to(".pattern", {
+      opacity: 1,
+      duration: 2,
+    });
+    return;
+  }
 
   tl.to(".cloud-end", {
     scale: 0.8,
@@ -59,7 +66,7 @@ onMounted(() => {
 <template>
   <section class="h-screen banner section-end">
     <div
-      class="cloud-end fixed top-[30%] flex w-full items-center justify-between"
+      class="cloud-end fixed top-[30%] hidden w-full items-center justify-between lg:flex"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
@@ -75,7 +82,7 @@ onMounted(() => {
       alt=""
     />
     <div
-      class="line fixed left-0 right-0 top-[50%] z-50 mx-auto flex hidden h-20 w-full items-center justify-center lg:block"
+      class="line fixed left-0 right-0 top-[50%] z-50 mx-auto hidden h-20 w-full items-center justify-center lg:flex"
     >
       <img class="w-1/2 -mr-5" src="@/assets/main/finishLine_l.png" alt="" />
       <img class="w-1/2" src="@/assets/main/finishLine_r.png" alt="" />

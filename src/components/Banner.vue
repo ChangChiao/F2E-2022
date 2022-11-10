@@ -93,7 +93,9 @@ onMounted(() => {
       alt=""
     />
 
-    <div class="cloud fixed top-[30%] flex w-full items-center justify-between">
+    <div
+      class="cloud fixed top-[30%] hidden w-full items-center justify-between lg:flex"
+    >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>

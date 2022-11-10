@@ -7,29 +7,44 @@ import { onMounted } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       //   start: "top 35%",
       trigger: ".section-cooperation",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });
 
   if (isMobile.value) {
-    tl.from(".title-cooperation", {
-      yPercent: -100,
-    })
-      .from(".cooperation-item-1", {
-        xPercent: 100,
-      })
-      .from(".cooperation-item-2", {
-        xPercent: -100,
-      })
-      .from(".cooperation-item-3", {
-        xPercent: 100,
-      });
+    tl.fromTo(
+      ".title-cooperation",
+      {
+        yPercent: -100,
+      },
+      { yPercent: 0, opacity: 1 }
+    )
+      .fromTo(
+        ".cooperation-item-1",
+        {
+          xPercent: 100,
+        },
+        { xPercent: 0, opacity: 1 }
+      )
+      .fromTo(
+        ".cooperation-item-2",
+        {
+          xPercent: -100,
+        },
+        { xPercent: 0, opacity: 1 }
+      )
+      .fromTo(
+        ".cooperation-item-3",
+        {
+          xPercent: 100,
+        },
+        { xPercent: 0, opacity: 1 }
+      );
     return;
   }
 
@@ -54,13 +69,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pt-10 section section-cooperation">
-    <div class="opacity-0 title-cooperation">
+  <div class="section section-cooperation pt-10">
+    <div class="title-cooperation opacity-0">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between pt-20 mx-auto opacity-100 cooperation-group lg:flex lg:w-2/3 xl:w-1/2"
+      class="cooperation-group mx-auto items-center justify-between pt-20 opacity-100 lg:flex lg:w-2/3 2xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1">
         <img

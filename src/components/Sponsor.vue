@@ -6,11 +6,10 @@ import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  if (isMobile.value) return;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-sponsors",
-      pin: true,
+      pin: !isMobile.value,
       scrub: true,
     },
   });
@@ -19,21 +18,33 @@ onMounted(() => {
     tl.from(".title-sponsor", {
       yPercent: -100,
     })
-      .from(".sponsor-1", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      })
-      .from(".sponsor-2", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      })
-      .from(".sponsor-3", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 2,
-      });
+      .fromTo(
+        ".sponsor-1",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      )
+      .fromTo(
+        ".sponsor-2",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      )
+      .fromTo(
+        ".sponsor-3",
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 2,
+        }
+      );
     return;
   }
   tl.from(".sponsor-group", {
@@ -47,9 +58,32 @@ onMounted(() => {
         opacity: 1,
       }
     )
-    .to(".tree-group", {
-      opacity: 1,
-    });
+    .fromTo(
+      ".sponsor-1",
+      { yPercent: 100 },
+      {
+        yPercent: 0,
+        opacity: 1,
+      }
+    )
+    .fromTo(
+      ".sponsor-2",
+      { yPercent: 100 },
+      {
+        yPercent: 0,
+        opacity: 1,
+      },
+      "+=1"
+    )
+    .fromTo(
+      ".sponsor-3",
+      { yPercent: 100 },
+      {
+        yPercent: 0,
+        opacity: 1,
+      },
+      "+=2"
+    );
 });
 </script>
 
@@ -59,19 +93,19 @@ onMounted(() => {
     <div
       class="items-center justify-between pt-4 mx-auto sponsor-group lg:flex lg:w-2/3 lg:pt-20"
     >
-      <div class="sponsor-1">
+      <div class="sponsor sponsor-1">
         <div class="sponsor-img">
           <img src="../assets/sponsor/blockstudio_logo.f3ba8de.png" alt="" />
         </div>
         <h4 class="hash-tag"># 版塊設計</h4>
       </div>
-      <div class="sponsor-2">
+      <div class="sponsor sponsor-2">
         <div class="sponsor-img">
           <img src="../assets/sponsor/titan_logo.5e2885a.png" alt="" />
         </div>
         <h4 class="hash-tag"># 鈦坦科技</h4>
       </div>
-      <div class="sponsor-3">
+      <div class="sponsor sponsor-3">
         <div class="sponsor-img">
           <img src="../assets/sponsor/kdan_logo.e8a0000.png" alt="" />
         </div>
