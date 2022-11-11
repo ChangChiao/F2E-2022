@@ -91,7 +91,7 @@ onMounted(() => {
 <template>
   <section class="section banner section-end">
     <div
-      class="cloud-end fixed top-[30%] hidden w-full items-center justify-between lg:flex"
+      class="cloud-end fixed top-[30%] hidden w-full items-center justify-between opacity-0 lg:flex"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />

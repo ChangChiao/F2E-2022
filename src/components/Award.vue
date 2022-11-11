@@ -12,6 +12,7 @@ onMounted(() => {
       trigger: ".section-award",
       pin: !isMobile.value,
       scrub: true,
+      pinSpacing: isMobile.value,
     },
   });
 
@@ -57,11 +58,29 @@ onMounted(() => {
       duration: 2,
     }
   )
-    .from(".join-group", {
-      opacity: 0,
-      translateY: 40,
-      duration: 10,
-    })
+    .fromTo(
+      ".trophy",
+      {
+        xPercent: -50,
+      },
+      {
+        opacity: 1,
+        xPercent: 0,
+        duration: 2,
+      }
+    )
+    .fromTo(
+      ".doc",
+      {
+        xPercent: 50,
+      },
+      {
+        opacity: 1,
+        xPercent: 0,
+        duration: 2,
+      }
+    )
+    .set({}, {}, "+=6")
     .to(".section-award", {
       opacity: 0,
     });
@@ -75,11 +94,11 @@ onMounted(() => {
     </div>
     <div class="justify-center w-2/3 mx-auto lg:flex">
       <img
-        class="trophy w-[375px] opacity-0"
+        class="trophy max-w-[375px] object-contain opacity-0"
         src="@/assets/main/award.png"
         alt=""
       />
-      <div class="doc">
+      <div class="pl-10 opacity-100 doc lg:opacity-0">
         <div class="doc-item rule">
           <h3 class="award-title">評審機制</h3>
           <ul>
@@ -122,6 +141,6 @@ onMounted(() => {
 }
 
 .doc-item {
-  @apply pb-4 opacity-0;
+  @apply pb-4 opacity-0 lg:opacity-100;
 }
 </style>

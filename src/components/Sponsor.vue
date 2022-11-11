@@ -11,6 +11,7 @@ onMounted(() => {
       trigger: ".section-sponsors",
       pin: !isMobile.value,
       scrub: true,
+      pinSpacing: isMobile.value,
     },
   });
 
@@ -83,7 +84,8 @@ onMounted(() => {
         opacity: 1,
       },
       "+=2"
-    );
+    )
+    .to(".section-sponsors", { opacity: 0 });
 });
 </script>
 
