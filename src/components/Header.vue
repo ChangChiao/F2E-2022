@@ -21,6 +21,9 @@ onMounted(() => {
     },
     1
   ).set({}, {}, "+=10");
+  const editUser = () => {
+    window.open("https://2022.thef2e.com/users", "_blank");
+  };
 });
 </script>
 
@@ -34,6 +37,7 @@ onMounted(() => {
       alt=""
     />
     <div
+      @click="editUser"
       class="w-20 bg-[url('@/assets/btn/btn_user.png')] bg-contain hover:bg-[url('@/assets/btn/btn_user_h.png')]"
     ></div>
     <!-- <img class="w-20" src="../assets/btn/btn_user.png" alt="" /> -->

@@ -30,7 +30,7 @@
     @apply text-lg text-highlight-normal;
   }
   .section {
-    @apply h-screen w-full overflow-hidden;
+    @apply h-auto w-full overflow-hidden lg:h-screen;
   }
 
   .wrapper {

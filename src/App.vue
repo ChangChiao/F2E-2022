@@ -29,7 +29,7 @@ const checkDevice = () => {
 };
 onMounted(() => {
   windowWidth = window.innerWidth;
-  window.addEventListener("resize", throttle(checkDevice, 500));
+  window.addEventListener("resize", throttle(checkDevice, 100));
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };

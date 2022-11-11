@@ -1,9 +1,5 @@
 <script setup>
 const props = defineProps({
-  isHover: {
-    type: Boolean,
-    default: false,
-  },
   isShowHand: {
     type: Boolean,
     default: false,
@@ -18,15 +14,17 @@ const props = defineProps({
 <template>
   <div :class="[size, 'join-btn group mx-auto cursor-pointer']">
     <img
-      v-if="isShowHand || isHover"
       src="@/assets/btn/btn_joinHand.png"
       :class="[
         'w-[1/4] animate-bounce',
-        isHover && 'opacity-0 group-hover:opacity-100',
+        !isShowHand && 'opacity-0 group-hover:opacity-100',
       ]"
       alt=""
     />
-    <img class src="@/assets/btn/btn_join.png" alt="" />
+    <div
+      class="h-10 w-20 bg-[url(@/assets/btn/btn_join.png)] bg-contain bg-center bg-no-repeat hover:bg-[url(@/assets/btn/btn_join_h.png)]"
+    ></div>
+    <!-- <img class src="@/assets/btn/btn_join.png" alt="" /> -->
   </div>
 </template>
 

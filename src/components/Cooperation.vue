@@ -87,13 +87,13 @@ onMounted(() => {
           alt=""
         />
         <div>
-          <JoinBtn size="w-20" :isHover="true" />
+          <JoinBtn size="w-20" />
           <h4 class="identity">前端工程師</h4>
         </div>
       </div>
       <div class="cooperation-item cooperation-item-2">
         <div>
-          <JoinBtn size="w-20" :isHover="true" />
+          <JoinBtn size="w-20" />
           <h4 class="identity">UI設計師</h4>
         </div>
         <img
@@ -109,7 +109,7 @@ onMounted(() => {
           alt=""
         />
         <div>
-          <JoinBtn size="w-20" :isHover="true" />
+          <JoinBtn size="w-20" />
           <h4 class="identity">團體組（ＵＩ＋前端）</h4>
         </div>
       </div>
