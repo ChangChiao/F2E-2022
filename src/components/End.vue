@@ -41,17 +41,17 @@ onMounted(() => {
       opacity: 0,
       duration: 2,
     })
-    // .fromTo(
-    //   ".finish-bar",
-    //   {
-    //     scale: 2,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     scale: 1,
-    //     duration: 2,
-    //   }
-    // )
+    .fromTo(
+      ".finish-bar",
+      {
+        scale: 2,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 2,
+      }
+    )
     .fromTo(
       ".line",
       {
@@ -102,7 +102,7 @@ onMounted(() => {
       <h3 class="text-highlight-normal">立即報名</h3>
     </div>
     <img
-      class="fixed top-0 left-0 right-0 z-10 hidden h-screen mx-auto origin-center finish-bar lg:block"
+      class="fixed top-0 left-0 right-0 z-10 hidden h-screen mx-auto origin-center opacity-0 finish-bar lg:block"
       src="@/assets/main/finish.png"
       alt=""
     />
@@ -117,5 +117,4 @@ onMounted(() => {
       <img class="w-1/2" src="@/assets/main/finishLine_r.png" alt="" />
     </div>
   </section>
-  <!-- <section class="section" /> -->
 </template>

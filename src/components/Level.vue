@@ -14,6 +14,7 @@ onMounted(() => {
       trigger: ".section-level",
       pin: !isMobile.value,
       scrub: true,
+      pinSpacing: isMobile.value,
     },
   });
 
