@@ -18,7 +18,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 z-50 w-full h-full overflow-hidden">
+  <div class="fixed top-0 left-0 z-[999] h-full w-full overflow-hidden">
     <div
       class="fixed top-0 bottom-0 left-0 right-0 w-full h-full m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
     ></div>

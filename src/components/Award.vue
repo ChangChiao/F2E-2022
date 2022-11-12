@@ -90,7 +90,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="pt-10 section section-award">
+  <section class="section section-award">
     <div class="title-award">
       <h2 class="title">還有比賽等著你！</h2>
     </div>

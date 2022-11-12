@@ -49,7 +49,7 @@ const getImg = (icon) => {
     <div
       @click="toggleMenu"
       :class="[
-        'absolute top-5 -right-20 m-auto h-20 w-20 cursor-pointer bg-contain bg-no-repeat  lg:top-0 lg:bottom-0 ',
+        'absolute top-5 -right-16 m-auto h-16 w-16 cursor-pointer bg-contain bg-no-repeat lg:-right-20 lg:top-0 lg:bottom-0  lg:h-20 lg:w-20 ',
         isShowMenu
           ? 'bg-[url(@/assets/btn/btn_burger_close.png)] hover:bg-[url(@/assets/btn/btn_burger_close_h.png)]'
           : 'bg-[url(@/assets/btn/btn_burger_open.png)] hover:bg-[url(@/assets/btn/btn_burger_open_h.png)]',

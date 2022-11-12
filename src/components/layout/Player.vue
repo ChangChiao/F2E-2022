@@ -78,7 +78,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="player-group pointer-events-none fixed bottom-0 left-0 right-0 z-40 mx-auto w-3/4 max-w-[1000px] origin-bottom lg:w-2/3 2xl:w-1/2"
+    class="player-group pointer-events-none fixed bottom-0 left-0 right-0 z-40 mx-auto w-[80%] max-w-[1000px] origin-bottom lg:w-2/3 2xl:w-1/2"
   >
     <div class="flex items-center justify-between" id="player">
       <img

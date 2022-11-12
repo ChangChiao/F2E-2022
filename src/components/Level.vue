@@ -118,7 +118,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="pt-10 section section-level">
+  <section class="section section-level">
     <div class="opacity-0 title-level">
       <h2 class="title">年度最強合作，三大主題來襲</h2>
       <h3 class="sub-title">各路廠商強強聯手</h3>

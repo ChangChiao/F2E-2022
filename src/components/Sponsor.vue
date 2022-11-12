@@ -99,7 +99,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="pt-10 section section-sponsors">
+  <section class="section section-sponsors">
     <h2 class="title title-sponsor">贊助單位</h2>
     <div
       class="items-center justify-between pt-4 mx-auto sponsor-group lg:flex lg:w-2/3 lg:pt-20"

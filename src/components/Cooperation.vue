@@ -7,18 +7,18 @@ import { onMounted } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      //   start: "top 35%",
-      trigger: ".section-cooperation",
-      pin: !isMobile.value,
-      scrub: true,
-      pinSpacing: isMobile.value,
-      toggleClass: "active",
-    },
-  });
-
   if (isMobile.value) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        //   start: "top 35%",
+        trigger: ".section-cooperation",
+        pin: false,
+        scrub: true,
+        toggleClass: "active",
+        start: "top bottom",
+        end: "bottom bottom",
+      },
+    });
     tl.fromTo(
       ".title-cooperation",
       {
@@ -31,24 +31,35 @@ onMounted(() => {
         {
           xPercent: 100,
         },
-        { xPercent: 0, opacity: 1 }
+        { xPercent: 0, opacity: 1, duration: 1 }
       )
       .fromTo(
         ".cooperation-item-2",
         {
           xPercent: -100,
         },
-        { xPercent: 0, opacity: 1 }
+        { xPercent: 0, opacity: 1, duration: 1 }
       )
       .fromTo(
         ".cooperation-item-3",
         {
           xPercent: 100,
         },
-        { xPercent: 0, opacity: 1 }
+        { xPercent: 0, opacity: 1, duration: 1 }
       );
     return;
   }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      //   start: "top 35%",
+      trigger: ".section-cooperation",
+      pin: true,
+      scrub: true,
+      pinSpacing: false,
+      toggleClass: "active",
+    },
+  });
 
   tl.to(
     ".title-cooperation",
@@ -77,43 +88,43 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pt-10 section section-cooperation">
+  <div class="section section-cooperation">
     <div class="opacity-0 title-cooperation">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between mx-auto mt-20 opacity-0 cooperation-group lg:flex lg:w-3/4 2xl:w-1/2"
+      class="items-center justify-between mx-auto mt-20 opacity-100 cooperation-group lg:flex lg:w-3/4 lg:opacity-0 2xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1">
         <img
-          class="lg:hidden"
+          class="w-1/2 lg:hidden"
           src="@/assets/character/character_f2e.png"
           alt=""
         />
-        <div>
+        <div class="cooperation-item-btn">
           <JoinBtn size="w-20" />
           <h4 class="identity">前端工程師</h4>
         </div>
       </div>
       <div class="cooperation-item cooperation-item-2">
-        <div>
+        <div class="cooperation-item-btn">
           <JoinBtn size="w-20" />
           <h4 class="identity">UI設計師</h4>
         </div>
         <img
-          class="lg:hidden"
+          class="w-1/2 lg:hidden"
           src="@/assets/character/character_ui.png"
           alt=""
         />
       </div>
       <div class="cooperation-item cooperation-item-3">
         <img
-          class="lg:hidden"
+          class="w-1/2 lg:hidden"
           src="@/assets/character/character_team.png"
           alt=""
         />
-        <div>
+        <div class="cooperation-item-btn">
           <JoinBtn size="w-20" />
           <h4 class="identity">團體組（ＵＩ＋前端）</h4>
         </div>
@@ -127,6 +138,9 @@ onMounted(() => {
 }
 
 .cooperation-item {
-  @apply flex items-center justify-center lg:w-1/3;
+  @apply flex w-full items-center justify-center lg:w-1/3;
+  &-btn {
+    @apply w-1/2 lg:w-auto;
+  }
 }
 </style>

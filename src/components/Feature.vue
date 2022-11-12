@@ -6,22 +6,27 @@ import { onMounted, ref } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section-feature",
-      // snap: [1, 2, 5, 7],
-      pin: !isMobile.value,
-      scrub: true,
-      // markers: true,
-      pinSpacing: isMobile.value,
-      toggleClass: "active",
-    },
-  });
   console.log("isMobile", isMobile.value);
   if (isMobile.value) {
-    tl.from(".title-feature", {
-      yPercent: -100,
-    })
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-feature",
+        pin: false,
+        scrub: true,
+        markers: true,
+        toggleClass: "active",
+        start: "top center",
+      },
+    });
+    tl.fromTo(
+      ".title-feature",
+      { yPercent: -100 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        direction: 1,
+      }
+    )
       .fromTo(
         ".feature-1",
         { xPercent: -100 },
@@ -44,10 +49,21 @@ onMounted(() => {
           opacity: 1,
           duration: 1,
         }
-      );
+      )
+      .set({}, {}, "+=4");
     return;
   }
 
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-feature",
+      pin: true,
+      scrub: true,
+      markers: true,
+      pinSpacing: false,
+      toggleClass: "active",
+    },
+  });
   tl.to(
     ".title-feature",
     {
@@ -111,10 +127,6 @@ onMounted(() => {
     // .addPause(10)
     // .addLabel("blueGreenSpin", 4)
     .set({}, {}, "+=4")
-    // .to(".feature-3", {
-    //   duration: 4,
-    //   opacity: 1,
-    // })
     .to(
       ".grass-group",
       {
@@ -131,20 +143,38 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pt-10 section section-feature">
+  <div class="section section-feature">
     <h2 class="opacity-0 title title-feature">你是否也有以下困擾？</h2>
     <div class="items-center justify-between wrapper lg:flex">
       <div class="feature feature-1">
         <h3 class="slogan">羨慕別人的酷酷網頁動畫？</h3>
-        <img src="@/assets/main/question_1.png" alt="" />
+        <img
+          class="hidden lg:block"
+          src="@/assets/main/question_1.png"
+          alt=""
+        />
+        <img
+          class="block lg:hidden"
+          src="@/assets/main/question_1_m.png"
+          alt=""
+        />
       </div>
       <div class="feature feature-2">
         <h3 class="slogan">滿足不了同事的許願？</h3>
-        <img src="@/assets/main/question_2.png" alt="" />
+        <img class="" src="@/assets/main/question_2.png" alt="" />
       </div>
       <div class="feature feature-3">
         <h3 class="slogan">動畫技能樹太雜無從下手？</h3>
-        <img src="@/assets/main/question_3.png" alt="" />
+        <img
+          class="hidden lg:block"
+          src="@/assets/main/question_3.png"
+          alt=""
+        />
+        <img
+          class="block lg:hidden"
+          src="@/assets/main/question_3_m.png"
+          alt=""
+        />
       </div>
     </div>
     <div
@@ -160,6 +190,6 @@ onMounted(() => {
   @apply mr-3 opacity-0;
 }
 .slogan {
-  @apply pb-2 text-center text-4xl text-highlight-normal;
+  @apply pb-2 pt-10 text-center text-xl text-highlight-normal lg:pt-0 lg:text-4xl;
 }
 </style>
