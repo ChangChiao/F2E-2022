@@ -14,6 +14,7 @@ onMounted(() => {
       pin: !isMobile.value,
       scrub: true,
       pinSpacing: isMobile.value,
+      toggleClass: "active",
     },
   });
 
@@ -78,7 +79,7 @@ onMounted(() => {
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between mx-auto opacity-0 cooperation-group lg:flex lg:w-3/4 2xl:w-1/2"
+      class="items-center justify-between mx-auto mt-20 opacity-0 cooperation-group lg:flex lg:w-3/4 2xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1">
         <img

@@ -12,7 +12,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :class="[size, 'join-btn group mx-auto cursor-pointer']">
+  <div
+    :class="[size, 'join-btn group relative z-[999] mx-auto cursor-pointer']"
+  >
     <img
       src="@/assets/btn/btn_joinHand.png"
       :class="[

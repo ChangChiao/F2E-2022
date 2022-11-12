@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  /* font-family: "Cubic-11";
-  src: url("/font/Cubic_11_1.013_R.woff") format("woff"),
-    url("/font/Cubic_11_1.013_R.woff2") format("woff2"); */
   font-family: "GenJyuuGothic";
   src: url("/font/GenJyuuGothic-Bold.woff2") format("woff2");
 }
@@ -21,7 +18,7 @@
 
 @layer components {
   .title {
-    @apply pointer-events-none mx-auto w-full  border-t-2 border-b-4 border-primary-normal bg-secondary-normal  bg-contain  bg-center bg-no-repeat pt-4 text-center text-primary-normal  lg:h-36 lg:w-2/3 lg:max-w-[800px] lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] lg:pt-7 lg:text-4xl xl:text-5xl 2xl:h-40 2xl:w-full 2xl:pt-8;
+    @apply pointer-events-none mx-auto w-full  border-t-2 border-b-4 border-primary-normal bg-secondary-normal  bg-contain  bg-center bg-no-repeat pt-4 text-center text-primary-normal  lg:h-36 lg:w-2/3 lg:max-w-[800px] lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] lg:pt-9 lg:text-4xl 2xl:h-40 2xl:w-full 2xl:pt-8 2xl:text-5xl;
   }
   .sub-title {
     @apply text-2xl text-center text-secondary-dark;
@@ -30,7 +27,7 @@
     @apply text-lg text-highlight-normal;
   }
   .section {
-    @apply w-full h-auto overflow-hidden lg:h-screen;
+    @apply w-full h-auto overflow-hidden pointer-events-none lg:h-screen;
   }
 
   .wrapper {
@@ -44,4 +41,8 @@
   .btn {
     @apply w-[180px] rounded-2xl bg-secondary-dark p-1 text-lg text-white hover:bg-highlight-normal;
   }
+}
+
+.active {
+  @apply relative z-10 pointer-events-auto;
 }

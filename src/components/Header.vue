@@ -28,17 +28,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <header
-    class="fixed top-0 flex items-center justify-between w-full h-48 px-2"
-  >
-    <img
-      class="w-40 opacity-0 header-logo"
-      src="../assets/logo/logo.png"
-      alt=""
-    />
+  <header class="fixed top-0 z-40 flex justify-between w-full h-48 p-4 pt-2">
+    <div class="w-40 opacity-0 header-logo">
+      <img class="" src="../assets/logo/logo.png" alt="" />
+    </div>
     <div
       @click="editUser"
-      class="w-20 bg-[url('@/assets/btn/btn_user.png')] bg-contain hover:bg-[url('@/assets/btn/btn_user_h.png')]"
+      class="h-20 w-20 bg-[url('@/assets/btn/btn_user.png')] bg-contain hover:bg-[url('@/assets/btn/btn_user_h.png')]"
     ></div>
     <!-- <img class="w-20" src="../assets/btn/btn_user.png" alt="" /> -->
   </header>

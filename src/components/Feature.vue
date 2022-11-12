@@ -14,6 +14,7 @@ onMounted(() => {
       scrub: true,
       // markers: true,
       pinSpacing: isMobile.value,
+      toggleClass: "active",
     },
   });
   console.log("isMobile", isMobile.value);
