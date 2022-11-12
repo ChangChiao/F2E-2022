@@ -7,8 +7,6 @@ import { useMedia } from "../hooks/useMedia";
 import Count from "./banner/Count.vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
-let player = null;
-let windowWidth = 0;
 
 const countList = [
   { title: "前端工程師", count: "920" },
@@ -16,23 +14,8 @@ const countList = [
   { title: "團體組", count: "47" },
 ];
 
-const handleMouseMove = (e) => {
-  const valueX = e.clientX;
-  const isLeft = valueX <= windowWidth;
-  if (!player) return;
-  if (isLeft) {
-    player.classList.add("offset-left");
-    player.classList.remove("offset-right");
-  } else {
-    player.classList.add("offset-right");
-    player.classList.remove("offset-left");
-  }
-};
-
 onMounted(() => {
   if (isMobile.value) return;
-  player = document.getElementById("player");
-  windowWidth = window.innerHeight / 2;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-banner",
@@ -86,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="h-screen banner section-banner" @mousemove="handleMouseMove">
+  <section class="h-screen banner section-banner">
     <img
       class="fixed left-0 right-0 z-10 hidden h-screen mx-auto pointer-events-none bar lg:block"
       src="@/assets/main/start.png"

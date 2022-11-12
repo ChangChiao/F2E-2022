@@ -21,16 +21,16 @@
 
 @layer components {
   .title {
-    @apply mx-auto w-full border-t-2  border-b-4 border-primary-normal bg-secondary-normal bg-contain  bg-center  bg-no-repeat pt-4 text-center text-primary-normal  lg:h-36 lg:w-2/3 lg:max-w-[800px] lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] lg:pt-7 lg:text-4xl xl:text-5xl 2xl:h-40 2xl:w-full 2xl:pt-8;
+    @apply pointer-events-none mx-auto w-full  border-t-2 border-b-4 border-primary-normal bg-secondary-normal  bg-contain  bg-center bg-no-repeat pt-4 text-center text-primary-normal  lg:h-36 lg:w-2/3 lg:max-w-[800px] lg:border-none lg:bg-[url('@/assets/bg/bg_talking.png')] lg:pt-7 lg:text-4xl xl:text-5xl 2xl:h-40 2xl:w-full 2xl:pt-8;
   }
   .sub-title {
-    @apply text-center text-2xl  text-secondary-dark;
+    @apply text-2xl text-center text-secondary-dark;
   }
   .remark {
     @apply text-lg text-highlight-normal;
   }
   .section {
-    @apply h-auto w-full overflow-hidden lg:h-screen;
+    @apply w-full h-auto overflow-hidden lg:h-screen;
   }
 
   .wrapper {
@@ -38,7 +38,7 @@
   }
 
   .hash-tag {
-    @apply mx-auto mt-5 rounded-3xl border-2 border-secondary-dark  p-1 px-2 text-center text-2xl  text-secondary-dark;
+    @apply p-1 px-2 mx-auto mt-5 text-2xl text-center border-2 rounded-3xl border-secondary-dark text-secondary-dark;
   }
 
   .btn {

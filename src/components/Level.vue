@@ -111,14 +111,14 @@ onMounted(() => {
 
 <template>
   <section class="pt-10 section section-level">
-    <div class="opacity-0 title-level">
+    <div class="opacity-0 pointer-events-none title-level">
       <h2 class="title">年度最強合作，三大主題來襲</h2>
       <h3 class="sub-title">各路廠商強強聯手</h3>
       <h3 class="sub-title">共同設計出接地氣的網頁互動挑戰關卡</h3>
     </div>
     <div class="mx-auto h-[50vh] w-3/4 overflow-hidden">
       <div class="opacity-0 level-list">
-        <div class="level level-1">
+        <div class="pointer-events-none level level-1">
           <img class="level-icon" src="@/assets/main/week_1.png" alt="" />
           <div class="level-content">
             <h4 class="week">WEEK1</h4>
@@ -174,23 +174,6 @@ onMounted(() => {
     @apply block py-3;
   }
 }
-
-/* .level-content {
-  @apply px-4;
-} */
-
-/* .level-icon {
-  @apply w-[160px];
-}
-
-.level-name {
-  @apply text-3xl  text-primary-normal;
-}
-
-.level-tag {
-  @apply block py-3;
-} */
-
 .week {
   @apply text-6xl  tracking-wider text-highlight-normal;
 }

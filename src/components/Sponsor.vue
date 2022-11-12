@@ -85,6 +85,7 @@ onMounted(() => {
       },
       "+=2"
     )
+    .set({}, {}, "+=6")
     .to(".section-sponsors", { opacity: 0 });
 });
 </script>

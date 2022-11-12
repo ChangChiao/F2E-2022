@@ -24,4 +24,4 @@
 - vue3
 - vite
 - tailwindcss
-- GSAP
+- gsap

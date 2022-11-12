@@ -25,7 +25,7 @@ onUnmounted(() => {
     <div
       class="loading-group absolute top-0 bottom-0 left-0 right-0 m-auto h-[200px] w-[400px]"
     >
-      <div class="player-group mx-auto w-[200px]">
+      <div class="player-group mx-auto min-h-[100px] w-[200px]">
         <div class="flex items-center justify-between">
           <img
             class="translate-y-1 player-loading player-1"

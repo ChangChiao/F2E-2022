@@ -20,6 +20,8 @@ import AOS from "aos";
 import Loading from "@/components/common/Loading.vue";
 const isMobile = useMedia();
 const isShowLoading = ref(true);
+let player = null;
+let windowWidth = 0;
 onMounted(() => {
   if (isMobile.value) {
     console.log("8888");
@@ -29,11 +31,30 @@ onMounted(() => {
     isShowLoading.value = false;
   }, 2000);
 });
+
+const handleMouseMove = (e) => {
+  const valueX = e.clientX;
+  const isLeft = valueX <= windowWidth;
+  if (!player) return;
+  if (isLeft) {
+    player.classList.add("offset-left");
+    player.classList.remove("offset-right");
+  } else {
+    player.classList.add("offset-right");
+    player.classList.remove("offset-left");
+  }
+};
+
+onMounted(() => {
+  if (isMobile.value) return;
+  player = document.getElementById("player");
+  windowWidth = window.innerHeight / 2;
+});
 </script>
 
 <template>
   <Loading v-if="isShowLoading" />
-  <div>
+  <div @mousemove="handleMouseMove">
     <Header />
     <Menu />
     <Banner />
