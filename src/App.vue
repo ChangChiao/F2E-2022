@@ -24,7 +24,7 @@ const checkDevice = () => {
     (windowWidth >= 1024 && window.innerWidth < 1024)
   ) {
     location.reload();
-    // alert("請重新整理！確保動畫可以正常運行");
+    // alert("請重新整理！確保動畫可以正常運作");
   }
 };
 onMounted(() => {

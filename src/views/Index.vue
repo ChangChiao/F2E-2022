@@ -65,7 +65,7 @@ onMounted(() => {
     <Cooperation />
     <Level />
     <Stage />
-    <!-- <Murmur /> -->
+    <Murmur />
     <Award />
     <Sponsor />
     <End />

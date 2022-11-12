@@ -41,7 +41,7 @@ onMounted(() => {
     />
     <div
       @click="editUser"
-      class="h-10 w-10 cursor-pointer bg-[url('@/assets/btn/btn_user.png')] bg-contain hover:bg-[url('@/assets/btn/btn_user_h.png')]"
+      class="h-10 w-10 cursor-pointer bg-[url('@/assets/btn/btn_user.png')] bg-contain hover:bg-[url('@/assets/btn/btn_user_h.png')] lg:h-20 lg:w-20"
     ></div>
     <!-- <img class="w-20" src="../assets/btn/btn_user.png" alt="" /> -->
   </header>

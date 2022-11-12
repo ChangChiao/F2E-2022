@@ -100,7 +100,7 @@ onMounted(() => {
         src="@/assets/main/award.png"
         alt=""
       />
-      <div class="pl-10 opacity-100 doc lg:opacity-0">
+      <div class="pl-20 opacity-100 doc lg:opacity-0">
         <div class="doc-item rule">
           <h3 class="award-title">評審機制</h3>
           <ul>

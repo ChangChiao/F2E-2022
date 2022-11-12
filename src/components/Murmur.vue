@@ -6,6 +6,27 @@ import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
+  if (isMobile.value) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-mur",
+        scrub: true,
+        markers: true,
+        start: "top bottom",
+      },
+    });
+    tl.fromTo(
+      ".title-mur",
+      { scale: 3 },
+      {
+        opacity: 1,
+        duration: 4,
+        scale: 1,
+      }
+    );
+    return;
+  }
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-mur",
@@ -54,7 +75,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="flex items-center justify-center h-screen banner section-mur">
+  <section
+    class="flex items-center justify-center h-screen overflow-hidden banner section-mur"
+  >
     <div
       class="cloud-mur fixed top-[30%] hidden w-full items-center justify-between overflow-hidden opacity-0 lg:flex"
     >
@@ -62,7 +85,7 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_07.png" alt="" />
     </div>
     <h2
-      class="title-mur origin-center -translate-y-[100px] text-6xl text-highlight-normal opacity-0"
+      class="title-mur origin-center text-3xl text-highlight-normal opacity-0 lg:-translate-y-[100px] lg:text-6xl"
     >
       區區修煉已經無法滿足了嗎？
     </h2>

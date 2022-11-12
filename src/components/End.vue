@@ -12,7 +12,7 @@ onMounted(() => {
       trigger: ".section-end",
       pin: !isMobile.value,
       scrub: true,
-      markers: true,
+      // markers: true,
       toggleClass: "active",
       // pinSpacing: false,
       // end: window.innerHeight * 2,

@@ -7,19 +7,26 @@ import { onMounted } from "vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section-stage",
-      pin: !isMobile.value,
-      scrub: true,
-      pinSpacing: false,
-    },
-  });
-
   if (isMobile.value) {
-    tl.from(".title-stage", {
-      yPercent: -100,
-    })
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-stage",
+        pin: false,
+        scrub: true,
+        start: "top bottom",
+        end: "bottom bottom",
+      },
+    });
+
+    tl.fromTo(
+      ".title-stage",
+      { yPercent: -100 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        direction: 1,
+      }
+    )
       .fromTo(
         ".stage-item-1",
         { yPercent: 100 },
@@ -49,6 +56,15 @@ onMounted(() => {
       );
     return;
   }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-stage",
+      pin: true,
+      scrub: true,
+      pinSpacing: false,
+    },
+  });
 
   tl.fromTo(
     ".title-stage",
@@ -143,39 +159,6 @@ onMounted(() => {
       },
       "-=2"
     )
-    // .fromTo(
-    //   ".stage-item-1",
-    //   {
-    //     yPercent: 50,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     yPercent: 0,
-    //     duration: 4,
-    //   }
-    // )
-    // .fromTo(
-    //   ".stage-item-2",
-    //   {
-    //     yPercent: 50,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     yPercent: 0,
-    //     duration: 4,
-    //   }
-    // )
-    // .fromTo(
-    //   ".stage-item-3",
-    //   {
-    //     yPercent: 50,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     yPercent: 0,
-    //     duration: 4,
-    //   }
-    // )
     .set({}, {}, "+=6")
     .to(".section-stage", {
       opacity: 0,
@@ -185,8 +168,11 @@ onMounted(() => {
 
 <template>
   <section class="pt-4 section section-stage">
-    <div class="flex items-center justify-between w-3/4 mx-auto stage-group">
-      <div class="translate-y-10 stage-item stage-item-1">
+    <h2 class="opacity-0 title title-stage">重要時程</h2>
+    <div
+      class="flex flex-col items-center justify-between w-3/4 mx-auto stage-group lg:flex-row"
+    >
+      <div class="stage-item stage-item-1 lg:translate-y-10">
         <div class="stage-item-content stage-item-content-1">
           <JoinBtn size="w-16" :isShowHand="true" />
           <h4 class="slogan">SIGN UP</h4>
@@ -199,7 +185,7 @@ onMounted(() => {
           alt=""
         />
       </div>
-      <div class="stage-item stage-item-2 translate-y-[22px]">
+      <div class="stage-item stage-item-2 lg:translate-y-[22px]">
         <div class="stage-item-content stage-item-content-2">
           <img class="w-24" src="../assets/main/date_start.png" alt="" />
           <h4 class="slogan">START</h4>
@@ -213,7 +199,7 @@ onMounted(() => {
           alt=""
         />
       </div>
-      <div class="stage-item stage-item-3 translate-y-[50px]">
+      <div class="stage-item stage-item-3 lg:translate-y-[50px]">
         <div class="stage-item-content stage-item-content-3">
           <img class="w-24" src="../assets/main/date_upload.png" alt="" />
           <h4 class="slogan">UPLOAD</h4>
@@ -236,13 +222,13 @@ onMounted(() => {
 </template>
 <style scoped>
 .slogan {
-  @apply pt-2 pb-2 text-center text-6xl  tracking-wider text-highlight-normal;
+  @apply pt-2 pb-2 text-center text-3xl tracking-wider  text-highlight-normal lg:text-6xl;
 }
 .date {
-  @apply mb-2 rounded-3xl bg-primary-normal px-4 py-2 text-center text-4xl text-white;
+  @apply mb-2 rounded-3xl bg-primary-normal px-4 py-2 text-center text-xl text-white lg:text-4xl;
 }
 .stage-item {
-  @apply flex w-1/3 flex-col items-center opacity-0;
+  @apply mx-auto flex w-3/4 flex-col items-center py-10 opacity-0 lg:w-1/3 lg:pb-0;
   &-content {
     @apply flex flex-col items-center bg-secondary-normal;
   }

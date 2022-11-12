@@ -12,7 +12,7 @@
     font-family: GenJyuuGothic;
   }
   body {
-    @apply bg-secondary-normal;
+    @apply cursor-[url(@/assets/cursor.svg),auto] bg-secondary-normal;
   }
 }
 
@@ -24,10 +24,10 @@
     lg:pt-9 lg:text-4xl 2xl:h-40 2xl:w-full 2xl:pt-8 2xl:text-5xl;
   }
   .sub-title {
-    @apply text-2xl text-center text-secondary-dark;
+    @apply text-xl text-center text-secondary-dark lg:text-2xl;
   }
   .remark {
-    @apply text-lg text-highlight-normal;
+    @apply text-base text-highlight-normal lg:text-lg;
   }
   .section {
     @apply w-full h-auto pt-0 overflow-hidden pointer-events-none lg:h-screen lg:pt-10;
@@ -38,7 +38,7 @@
   }
 
   .hash-tag {
-    @apply p-1 px-2 mx-auto mt-5 text-2xl text-center border-2 rounded-3xl border-secondary-dark text-secondary-dark;
+    @apply p-1 px-3 mb-3 text-lg text-center border-2 rounded-3xl border-secondary-dark text-secondary-dark lg:my-0 lg:text-2xl;
   }
 
   .btn {
