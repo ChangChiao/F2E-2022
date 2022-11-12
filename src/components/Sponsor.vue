@@ -104,26 +104,23 @@ onMounted(() => {
     <div
       class="items-center justify-between pt-4 mx-auto sponsor-group lg:flex lg:w-2/3 lg:pt-20"
     >
-      <div class="sponsor sponsor-1" @click="toLink('https://blockstudio.tw/')">
-        <div class="sponsor-img">
+      <div class="sponsor sponsor-1">
+        <div class="sponsor-img" @click="toLink('https://blockstudio.tw/')">
           <img src="../assets/main/logo_blockstudio.png" alt="" />
         </div>
         <h4 class="hash-tag"># 版塊設計</h4>
       </div>
-      <div
-        class="sponsor sponsor-2"
-        @click="toLink('https://titansoft.com/tw')"
-      >
-        <div class="sponsor-img">
+      <div class="sponsor sponsor-2">
+        <div class="sponsor-img" @click="toLink('https://titansoft.com/tw')">
           <img src="../assets/main/logo_titansoft.png" alt="" />
         </div>
         <h4 class="hash-tag"># 鈦坦科技</h4>
       </div>
-      <div
-        class="sponsor sponsor-3"
-        @click="toLink('https://www.kdanmobile.com/zh-tw')"
-      >
-        <div class="sponsor-img">
+      <div class="sponsor sponsor-3">
+        <div
+          class="sponsor-img"
+          @click="toLink('https://www.kdanmobile.com/zh-tw')"
+        >
           <img src="../assets/main/logo_kdanmobile.png" alt="" />
         </div>
         <h4 class="hash-tag"># 凱細科技</h4>

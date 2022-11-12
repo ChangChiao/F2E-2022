@@ -18,6 +18,7 @@ import End from "@/components/End.vue";
 import { useMedia } from "../hooks/useMedia";
 import AOS from "aos";
 import Loading from "@/components/common/Loading.vue";
+import JoinBtn from "../components/common/JoinBtn.vue";
 const isMobile = useMedia();
 const isShowLoading = ref(true);
 let player = null;
@@ -69,6 +70,12 @@ onMounted(() => {
     <Sponsor />
     <End />
     <Map />
+    <div class="fixed z-50 text-center right-5 bottom-5">
+      <a href="https://2022.thef2e.com/" target="_blank">
+        <strong class="pb-2 tracking-wider text-primary-normal">JOIN</strong>
+        <JoinBtn size="w-20" :is-show-hand="true" />
+      </a>
+    </div>
   </div>
 </template>
 

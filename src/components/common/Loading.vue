@@ -51,10 +51,7 @@ onUnmounted(() => {
         <div class="w-0 h-full loading-bar bg-primary-normal"></div>
       </div>
     </div>
-    <!-- <div
-      class="fixed top-0 bottom-0 left-0 right-0 w-1 h-1 m-auto origin-center bg-red-500 rounded-full circle bg-clip-content"
-    ></div>
-    <div class="fixed w-10 h-10 test top-6 left-6 bg-slate-500">test...</div> -->
+    <div class="opacity-0 img-preload"></div>
   </div>
 </template>
 
@@ -65,5 +62,12 @@ onUnmounted(() => {
 
 .test {
   clip-path: circle(20%);
+}
+
+.img-preload {
+  background-image: url("src/assets/btn/btn_user_h.png"),
+    url("src/assets/btn/btn_burger_close_h.png"),
+    url("src/assets/btn/btn_burger_open_h.png"),
+    url("src/assets/btn/btn_join_h.png");
 }
 </style>

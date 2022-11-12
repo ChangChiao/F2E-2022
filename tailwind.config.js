@@ -30,8 +30,15 @@ module.exports = {
         "0%": { transform: "scale(0)", opacity: 1 },
         "100%": { transform: "scale(1)", opacity: 0 },
       },
+      jump: {
+        "0%": { transform: "translateY(-6px)" },
+        "100%": { transform: "translateY(0)" },
+      },
     },
-    animation: { enlarge: "enlarge 1s linear infinite" },
+    animation: {
+      enlarge: "enlarge 1s linear infinite",
+      jump: "jump 0.1s linear infinite alternate",
+    },
     backgroundImage: {
       sponsor: "url(/src/assets/btn/btn_sponsor.png)",
       "sponsor-h": "url(/src/assets/btn/btn_sponsor_h.png)",
