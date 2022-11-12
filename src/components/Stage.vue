@@ -66,15 +66,15 @@ onMounted(() => {
     },
   });
 
-  tl.fromTo(
-    ".title-stage",
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 2,
-    }
-  )
-    .fromTo(".line-mask", { width: "100%" }, { width: 0, duration: 4 })
+  // tl.fromTo(
+  //   ".title-stage",
+  //   { opacity: 0 },
+  //   {
+  //     opacity: 1,
+  //     duration: 2,
+  //   }
+  // )
+  tl.fromTo(".line-mask", { width: "100%" }, { width: 0, duration: 4 })
     .to(".stage-item-1", {
       opacity: 1,
       duration: 1,
@@ -168,13 +168,13 @@ onMounted(() => {
 
 <template>
   <section class="pt-4 section section-stage">
-    <h2 class="opacity-0 title title-stage">重要時程</h2>
+    <h2 class="static opacity-0 title title-stage lg:absolute">重要時程</h2>
     <div
       class="flex flex-col items-center justify-between w-3/4 mx-auto stage-group lg:flex-row"
     >
       <div class="stage-item stage-item-1 lg:translate-y-10">
         <div class="stage-item-content stage-item-content-1">
-          <JoinBtn size="w-16" :isShowHand="true" />
+          <JoinBtn :isShowHand="true" />
           <h4 class="slogan">SIGN UP</h4>
           <span class="date">10/1 - 11/16</span>
           <p class="sub-title">截止前可修改報名組別</p>

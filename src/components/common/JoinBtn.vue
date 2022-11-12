@@ -6,13 +6,18 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "w-10",
+    default: "small",
   },
 });
 </script>
 
 <template>
-  <div :class="[size, 'join-btn group mx-auto cursor-pointer']">
+  <div
+    :class="[
+      size === 'small' ? 'w-20' : 'w-[140px]',
+      'join-btn group mx-auto cursor-pointer',
+    ]"
+  >
     <img
       src="@/assets/btn/btn_joinHand.png"
       :class="[
@@ -22,7 +27,10 @@ const props = defineProps({
       alt=""
     />
     <div
-      class="h-10 w-20 bg-[url(@/assets/btn/btn_join.png)] bg-contain bg-center bg-no-repeat hover:bg-[url(@/assets/btn/btn_join_h.png)]"
+      :class="[
+        size === 'small' ? 'h-10 w-20' : 'h-20 w-[140px]',
+        'bg-[url(@/assets/btn/btn_join.png)] bg-contain bg-center bg-no-repeat hover:bg-[url(@/assets/btn/btn_join_h.png)]',
+      ]"
     ></div>
     <!-- <img class src="@/assets/btn/btn_join.png" alt="" /> -->
   </div>

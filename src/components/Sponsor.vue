@@ -53,16 +53,21 @@ onMounted(() => {
       );
     return;
   }
-  tl.from(".sponsor-group", {
-    opacity: 0,
-    translateY: 40,
-  })
-    .fromTo(
-      ".title-sponsor",
-      { opacity: 0 },
+
+  tl.fromTo(
+    ".title-sponsor",
+    { opacity: 0 },
+    {
+      opacity: 1,
+    }
+  )
+    .to(
+      ".tree-group",
       {
+        scale: 1.25,
         opacity: 1,
-      }
+      },
+      "<"
     )
     .fromTo(
       ".sponsor-1",
@@ -73,6 +78,14 @@ onMounted(() => {
         duration: 1,
       }
     )
+    .to(
+      ".tree-group",
+      {
+        scale: 1,
+        opacity: 1,
+      },
+      "<"
+    )
     .fromTo(
       ".sponsor-2",
       { yPercent: 100 },
@@ -80,8 +93,15 @@ onMounted(() => {
         yPercent: 0,
         opacity: 1,
         duration: 1,
+      }
+    )
+    .to(
+      ".tree-group",
+      {
+        scale: 0.8,
+        opacity: 0.8,
       },
-      "+=1"
+      "<"
     )
     .fromTo(
       ".sponsor-3",
@@ -90,8 +110,16 @@ onMounted(() => {
         yPercent: 0,
         opacity: 1,
         duration: 1,
+        delay: 0.6,
+      }
+    )
+    .to(
+      ".tree-group",
+      {
+        scale: 0.5,
+        opacity: 0.5,
       },
-      "+=2"
+      "<"
     )
     .set({}, {}, "+=6")
     .to(".section-sponsors", { opacity: 0 });
@@ -127,7 +155,7 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="fixed bottom-0 left-0 right-0 flex justify-between w-2/3 mx-auto scale-125 opacity-0 tree-group"
+      class="fixed bottom-0 left-0 right-0 flex justify-between w-2/3 mx-auto origin-bottom scale-125 opacity-0 tree-group"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_04.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_08.png" alt="" />
@@ -139,19 +167,18 @@ onMounted(() => {
   @apply cursor-pointer opacity-0;
 }
 .sponsor-img {
-  @apply flex 
-  h-[200px]
-  w-[200px]
-  cursor-pointer  
-  items-center 
-  justify-center
+  @apply mb-5
+  flex
+  h-[250px]
+  w-[250px]  
+  cursor-pointer 
+  items-center
+  justify-center 
   overflow-hidden 
-  rounded-[32px] 
+  rounded-[32px]
   bg-sponsor
   bg-contain
-  hover:bg-sponsor-h
-  2xl:h-[250px] 
-  2xl:w-[250px];
+  hover:bg-sponsor-h;
   img {
     @apply w-[80%];
   }

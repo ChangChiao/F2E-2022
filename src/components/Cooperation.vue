@@ -94,7 +94,7 @@ onMounted(() => {
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between mx-auto mt-20 opacity-100 cooperation-group lg:flex lg:w-3/4 lg:opacity-0 2xl:w-1/2"
+      class="items-center justify-between mx-auto mt-10 opacity-100 cooperation-group lg:flex lg:w-3/4 lg:opacity-0 2xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1">
         <img
@@ -103,13 +103,13 @@ onMounted(() => {
           alt=""
         />
         <div class="cooperation-item-btn">
-          <JoinBtn size="w-20" />
+          <JoinBtn />
           <h4 class="identity">前端工程師</h4>
         </div>
       </div>
       <div class="cooperation-item cooperation-item-2">
         <div class="cooperation-item-btn">
-          <JoinBtn size="w-20" />
+          <JoinBtn />
           <h4 class="identity">UI設計師</h4>
         </div>
         <img
@@ -125,7 +125,7 @@ onMounted(() => {
           alt=""
         />
         <div class="cooperation-item-btn">
-          <JoinBtn size="w-20" />
+          <JoinBtn />
           <h4 class="identity">團體組（ＵＩ＋前端）</h4>
         </div>
       </div>

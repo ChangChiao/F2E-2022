@@ -73,7 +73,7 @@ onMounted(() => {
     <div class="fixed z-50 hidden text-center right-5 bottom-5 lg:block">
       <a href="https://2022.thef2e.com/" target="_blank">
         <strong class="pb-2 tracking-wider text-primary-normal">JOIN</strong>
-        <JoinBtn size="w-20" :is-show-hand="true" />
+        <JoinBtn :is-show-hand="true" />
       </a>
     </div>
   </div>
