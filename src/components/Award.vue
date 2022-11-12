@@ -13,6 +13,7 @@ onMounted(() => {
       pin: !isMobile.value,
       scrub: true,
       pinSpacing: isMobile.value,
+      toggleClass: "active",
     },
   });
 
@@ -55,8 +56,9 @@ onMounted(() => {
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 2,
-    }
+      duration: 1,
+    },
+    1
   )
     .fromTo(
       ".trophy",

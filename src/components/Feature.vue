@@ -48,15 +48,14 @@ onMounted(() => {
     return;
   }
 
-  tl.timeScale(0.5)
-    .to(
-      ".title-feature",
-      {
-        opacity: 1,
-        duration: 1,
-      },
-      1
-    )
+  tl.to(
+    ".title-feature",
+    {
+      opacity: 1,
+      duration: 1,
+    },
+    1
+  )
     .to(
       ".grass-group",
       {

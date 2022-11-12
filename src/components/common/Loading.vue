@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
 onMounted(() => {
-  //   document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
   const tl = gsap.timeline();
   tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 })
     .to(".loading-group", {

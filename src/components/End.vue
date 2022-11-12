@@ -13,6 +13,7 @@ onMounted(() => {
       pin: !isMobile.value,
       scrub: true,
       markers: true,
+      toggleClass: "active",
       // pinSpacing: false,
       // end: window.innerHeight * 2,
     },

@@ -50,10 +50,14 @@ onMounted(() => {
     return;
   }
 
-  tl.to(".title-cooperation", {
-    opacity: 1,
-    duration: 2,
-  })
+  tl.to(
+    ".title-cooperation",
+    {
+      opacity: 1,
+      duration: 1,
+    },
+    1
+  )
     .fromTo(
       ".cooperation-group",
       {

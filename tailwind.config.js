@@ -25,6 +25,17 @@ module.exports = {
         "5xl": "2.75rem", // 44px
       },
     },
+    keyframes: {
+      enlarge: {
+        "0%": { transform: "scale(0)", opacity: 1 },
+        "100%": { transform: "scale(1)", opacity: 0 },
+      },
+    },
+    animation: { enlarge: "enlarge 1s linear infinite" },
+    backgroundImage: {
+      sponsor: "url(/src/assets/btn/btn_sponsor.png)",
+      "sponsor-h": "url(/src/assets/btn/btn_sponsor_h.png)",
+    },
   },
   plugins: [],
 };

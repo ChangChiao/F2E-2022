@@ -199,7 +199,7 @@ onMounted(() => {
           alt=""
         />
       </div>
-      <div class="translate-y-5 stage-item stage-item-2">
+      <div class="stage-item stage-item-2 translate-y-[22px]">
         <div class="stage-item-content stage-item-content-2">
           <img class="w-24" src="../assets/main/date_start.png" alt="" />
           <h4 class="slogan">START</h4>
@@ -213,7 +213,7 @@ onMounted(() => {
           alt=""
         />
       </div>
-      <div class="stage-item stage-item-3 translate-y-[55px]">
+      <div class="stage-item stage-item-3 translate-y-[50px]">
         <div class="stage-item-content stage-item-content-3">
           <img class="w-24" src="../assets/main/date_upload.png" alt="" />
           <h4 class="slogan">UPLOAD</h4>
@@ -228,7 +228,7 @@ onMounted(() => {
         />
       </div>
     </div>
-    <div class="relative for-mobile">
+    <div class="relative for-mobile -scale-x-100">
       <img src="../assets/main/date_line.png" alt="" />
       <div class="absolute top-0 h-40 line-mask bg-secondary-normal"></div>
     </div>

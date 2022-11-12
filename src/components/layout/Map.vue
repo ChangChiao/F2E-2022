@@ -83,13 +83,24 @@ onMounted(() => {
 <template>
   <div class="fixed bottom-5 left-7 z-40 hidden w-[220px] lg:block">
     <img src="../../assets/main/map.svg" alt="" />
-    <img
+    <div
       :style="{ top: y + 'px', left: x + 'px' }"
-      class="absolute point"
-      src="../../assets/main/map_now.svg"
+      class="point absolute h-2.5 w-2.5 rounded-full bg-red-500"
       alt=""
     />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.point {
+  @apply after:absolute 
+  after:-left-[11px]
+  after:-top-[11px]
+  after:h-8
+  after:w-8
+  after:animate-enlarge 
+  after:rounded-full
+  after:bg-red-500
+  after:content-[''];
+}
+</style>

@@ -5,6 +5,10 @@ import { onMounted, ref } from "vue";
 import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
+
+const toLink = (url) => {
+  window.open(url, "_blank");
+};
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -12,6 +16,7 @@ onMounted(() => {
       pin: !isMobile.value,
       scrub: true,
       pinSpacing: isMobile.value,
+      toggleClass: "active",
     },
   });
 
@@ -65,6 +70,7 @@ onMounted(() => {
       {
         yPercent: 0,
         opacity: 1,
+        duration: 1,
       }
     )
     .fromTo(
@@ -73,6 +79,7 @@ onMounted(() => {
       {
         yPercent: 0,
         opacity: 1,
+        duration: 1,
       },
       "+=1"
     )
@@ -82,6 +89,7 @@ onMounted(() => {
       {
         yPercent: 0,
         opacity: 1,
+        duration: 1,
       },
       "+=2"
     )
@@ -96,21 +104,27 @@ onMounted(() => {
     <div
       class="items-center justify-between pt-4 mx-auto sponsor-group lg:flex lg:w-2/3 lg:pt-20"
     >
-      <div class="sponsor sponsor-1">
+      <div class="sponsor sponsor-1" @click="toLink('https://blockstudio.tw/')">
         <div class="sponsor-img">
-          <img src="../assets/sponsor/blockstudio_logo.f3ba8de.png" alt="" />
+          <img src="../assets/main/logo_blockstudio.png" alt="" />
         </div>
         <h4 class="hash-tag"># 版塊設計</h4>
       </div>
-      <div class="sponsor sponsor-2">
+      <div
+        class="sponsor sponsor-2"
+        @click="toLink('https://titansoft.com/tw')"
+      >
         <div class="sponsor-img">
-          <img src="../assets/sponsor/titan_logo.5e2885a.png" alt="" />
+          <img src="../assets/main/logo_titansoft.png" alt="" />
         </div>
         <h4 class="hash-tag"># 鈦坦科技</h4>
       </div>
-      <div class="sponsor sponsor-3">
+      <div
+        class="sponsor sponsor-3"
+        @click="toLink('https://www.kdanmobile.com/zh-tw')"
+      >
         <div class="sponsor-img">
-          <img src="../assets/sponsor/kdan_logo.e8a0000.png" alt="" />
+          <img src="../assets/main/logo_kdanmobile.png" alt="" />
         </div>
         <h4 class="hash-tag"># 凱細科技</h4>
       </div>
@@ -125,9 +139,24 @@ onMounted(() => {
 </template>
 <style scoped>
 .sponsor {
-  @apply opacity-0;
+  @apply cursor-pointer opacity-0;
 }
 .sponsor-img {
-  @apply h-[200px] w-[200px] overflow-hidden  rounded-[32px] border-8 border-primary-normal 2xl:h-[250px] 2xl:w-[250px];
+  @apply flex 
+  h-[200px]
+  w-[200px]
+  cursor-pointer  
+  items-center 
+  justify-center
+  overflow-hidden 
+  rounded-[32px] 
+  bg-sponsor
+  bg-contain
+  hover:bg-sponsor-h
+  2xl:h-[250px] 
+  2xl:w-[250px];
+  img {
+    @apply w-[80%];
+  }
 }
 </style>

@@ -51,10 +51,14 @@ onMounted(() => {
     return;
   }
 
-  tl.to(".title-level", {
-    opacity: 1,
-    duration: 2,
-  })
+  tl.to(
+    ".title-level",
+    {
+      opacity: 1,
+      duration: 1,
+    },
+    1
+  )
     .to(
       ".level-list",
       {
