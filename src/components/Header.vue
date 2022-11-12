@@ -17,10 +17,23 @@ onMounted(() => {
     ".header-logo",
     {
       opacity: 1,
-      duration: 1,
     },
-    1
-  ).set({}, {}, "+=10");
+    2
+  )
+    .to(
+      ".header-logo",
+      {
+        opacity: 1,
+      },
+      9
+    )
+    .to(
+      ".header-logo",
+      {
+        opacity: 0,
+      },
+      9.5
+    );
   const editUser = () => {
     window.open("https://2022.thef2e.com/users", "_blank");
   };

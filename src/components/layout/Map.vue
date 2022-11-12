@@ -8,13 +8,13 @@ const x = ref(0);
 const y = ref(0);
 
 const posList = {
-  0: { x: "11", y: "53" },
+  0: { x: "10", y: "53" },
   1: { x: "45", y: "11" },
   2: { x: "106", y: "19" },
   3: { x: "176", y: "20" },
   4: { x: "168", y: "62" },
   5: { x: "120", y: "83" },
-  6: { x: "113", y: "81" },
+  6: { x: "80", y: "114" },
 };
 
 const setPos = (num) => {
@@ -27,65 +27,95 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "body",
       // markers: true,
-      start: "top 20%",
-      end: "bottom 20%",
+      // start: "top 20%",
+      // end: "bottom 20%",
       scrub: true,
     },
   });
-  tl.to(".point", {
-    duration: 5,
-    onComplete: setPos,
-    onCompleteParams: [1],
-  });
-  tl.to(".point", {
-    duration: 4,
-    onComplete: setPos,
-    onCompleteParams: [2],
-  })
-    .to(".point", {
-      duration: 4,
-      onComplete: setPos,
-      onCompleteParams: [3],
-    })
-    .to(".point", {
-      duration: 4,
-      onComplete: setPos,
-      onCompleteParams: [4],
-    })
-    .to(".point", {
-      duration: 4,
-      onComplete: setPos,
-      onCompleteParams: [5],
-    })
-    .to(".point", {
-      duration: 4,
-      onComplete: setPos,
-      onCompleteParams: [6],
-    });
+  // tl.to(
+  //   ".point",
+  //   {
+  //      top: "11px",
+  //      left: "53px",
+  //      onComplete: setPos,
+  //      onCompleteParams: [1],
+  //   },
+  //   1
+  // );
+  tl.to(
+    ".point",
+    {
+      top: "11px",
+      left: "45px",
+      // onComplete: setPos,
+      // onCompleteParams: [2],
+    },
+    2
+  )
+    .to(
+      ".point",
+      {
+        top: "19px",
+        left: "106px",
+        // onComplete: setPos,
+        // onCompleteParams: [3],
+      },
+      3
+    )
+    .to(
+      ".point",
+      {
+        top: "20px",
+        left: "176px",
+        // onComplete: setPos,
+        // onCompleteParams: [4],
+      },
+      4
+    )
+    .to(
+      ".point", //mur
+      {
+        top: "62px",
+        left: "168px",
+        // onComplete: setPos,
+        // onCompleteParams: [5],
+      },
+      5
+    )
+    .to(
+      ".point",
+      {
+        top: "83px",
+        left: "120px",
+        // onComplete: setPos,
+        // onCompleteParams: [6],
+      },
+      5.5
+    )
+    .to(
+      ".point",
+      {
+        top: "114px",
+        left: "80px",
+        // onComplete: setPos,
+        // onCompleteParams: [6],
+      },
+      6
+    )
+    .to(".map-box", { opacity: 0 }, 7)
+    .to(".map-box", { opacity: 0 }, 8);
 });
 
-const throttle = (fn, wait) => {
-  var time = Date.now();
-  return () => {
-    if (time + wait - Date.now() < 0) {
-      fn();
-      time = Date.now();
-    }
-  };
-};
-
 onMounted(() => {
-  document.addEventListener("scroll", (e) => {});
   setPos(0);
 });
 </script>
 
 <template>
-  <div class="fixed bottom-5 left-7 z-40 hidden w-[220px] lg:block">
+  <div class="map-box fixed bottom-5 left-7 z-40 hidden w-[220px] lg:block">
     <img src="../../assets/main/map.svg" alt="" />
     <div
-      :style="{ top: y + 'px', left: x + 'px' }"
-      class="point absolute h-2.5 w-2.5 rounded-full bg-red-500"
+      class="point absolute top-[53px] left-[10px] h-2.5 w-2.5 rounded-full bg-red-500"
       alt=""
     />
   </div>

@@ -68,8 +68,16 @@ onMounted(() => {
       {
         opacity: 1,
         xPercent: 0,
-        duration: 2,
+        duration: 3,
       }
+    )
+    .fromTo(
+      ".award-trophy-light",
+      { rotation: 720 },
+      {
+        rotation: 0,
+      },
+      "<"
     )
     .fromTo(
       ".doc",
@@ -94,12 +102,19 @@ onMounted(() => {
     <div class="title-award">
       <h2 class="title">還有比賽等著你！</h2>
     </div>
-    <div class="justify-center w-2/3 mx-auto lg:flex">
-      <img
-        class="trophy max-w-[375px] object-contain opacity-0"
-        src="@/assets/main/award.png"
-        alt=""
-      />
+    <div class="items-center justify-center w-2/3 pt-10 mx-auto lg:flex">
+      <div class="trophy relative w-[375px] opacity-0">
+        <img
+          class="award-trophy-light"
+          src="@/assets/main/award_light.png"
+          alt=""
+        />
+        <img
+          class="absolute top-0 bottom-0 left-0 right-0 w-full"
+          src="@/assets/main/award_trophy.png"
+          alt=""
+        />
+      </div>
       <div class="pl-20 opacity-100 doc lg:opacity-0">
         <div class="doc-item rule">
           <h3 class="award-title">評審機制</h3>
