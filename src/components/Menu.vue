@@ -36,13 +36,13 @@ const getImg = (icon) => {
 <template>
   <div
     v-if="isShowMenu"
-    class="fixed z-40 w-screen h-screen opacity-50 nav-mask bg-secondary-normal lg:hidden"
+    class="nav-mask fixed z-[999] h-screen w-screen bg-secondary-normal opacity-50 lg:hidden"
   ></div>
   <nav
     :class="[
       'fixed top-0 left-0 z-[999] flex h-screen w-[150px]  justify-center bg-primary-normal duration-500 ',
       isShowMenu
-        ? '-translate-x-[20px] lg:-translate-x-[20px]'
+        ? '-translate-x-[0px] lg:-translate-x-[10px]'
         : '-translate-x-[150px] lg:-translate-x-[140px]',
     ]"
   >
@@ -57,16 +57,18 @@ const getImg = (icon) => {
     ></div>
     <ul class="pt-12 text-center">
       <li
-        class="pb-5 cursor-pointer group text-secondary-normal"
+        class="pb-10 cursor-pointer group text-secondary-normal"
         v-for="(item, i) in menu"
         :key="`menu-${i}`"
       >
         <img
-          class="w-10 mx-auto mb-2 group-hover:brightness-110"
+          class="w-12 mx-auto mb-2 group-hover:brightness-110"
           :src="getImg(item.icon)"
           alt=""
         />
-        <span class="group-hover:brightness-110"> {{ item.title }}</span>
+        <span class="text-lg group-hover:brightness-110">
+          {{ item.title }}</span
+        >
       </li>
     </ul>
   </nav>

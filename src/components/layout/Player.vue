@@ -16,21 +16,18 @@ onMounted(() => {
     },
   });
   if (isMobile.value) {
-    tl.to(
-      ".player-group",
-      {
-        scale: 0.5,
-        bottom: 0,
-      },
-      1
-    ).to(
-      ".player-group",
-      {
-        scale: 0.5,
-        bottom: 0,
-      },
-      10
-    );
+    tl.to(".player-group", {
+      scale: 0.6,
+      duration: 0.5,
+    })
+      .to(".player-group", {
+        scale: 0.6,
+        duration: 3.5,
+      })
+      .to(".player-group", {
+        scale: 1,
+        duration: 1,
+      });
     return;
   }
   tl.to(

@@ -8,19 +8,22 @@ const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
   if (isMobile.value) {
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".section-end",
-    //     scrub: true,
-    //     start: "bottom bottom",
-    //     // end: "bottom bottom",
-    //     toggleClass: "active",
-    //   },
-    // });
-    // tl.to(".pattern", {
-    //   opacity: 1,
-    //   duration: 3,
-    // });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-end",
+        scrub: true,
+        start: "top bottom",
+        // end: "bottom bottom",
+        toggleClass: "active",
+      },
+    });
+    tl.to(".pattern", {
+      opacity: 1,
+      duration: 2,
+    }).to(".pattern", {
+      opacity: 1,
+      duration: 2,
+    });
     return;
   }
 
@@ -116,12 +119,14 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
     <div
-      class="pattern fixed left-0 right-0 bottom-0 top-0 z-[999] m-auto mx-auto h-[800px] w-[400px] text-center opacity-0"
+      class="pattern relative left-0 right-0 z-[999] m-auto mx-auto w-3/5 translate-y-[65%] text-center opacity-0 lg:fixed lg:bottom-0 lg:top-0 lg:h-[800px] lg:w-[400px]"
     >
       <img src="@/assets/logo/logo.png" class="mb-4" alt="" />
       <a href="https://2022.thef2e.com/" target="_blank">
-        <JoinBtn size="big" :isShowHand="true" />
-        <h3 class="pt-2 text-5xl text-highlight-normal">立即報名</h3>
+        <JoinBtn :size="isMobile ? 'small' : 'big'" :isShowHand="true" />
+        <h3 class="pt-2 text-3xl text-highlight-normal lg:text-5xl">
+          立即報名
+        </h3>
       </a>
     </div>
     <img
