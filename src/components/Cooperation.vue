@@ -89,12 +89,12 @@ onMounted(() => {
 
 <template>
   <div class="section section-cooperation">
-    <div class="opacity-0 title-cooperation">
+    <div class="title-cooperation opacity-0">
       <h2 class="title">本屆主題：互動式網頁設計</h2>
       <h3 class="sub-title">以下兩個角色進行攜手合作</h3>
     </div>
     <div
-      class="items-center justify-between mx-auto mt-10 opacity-100 cooperation-group lg:flex lg:w-3/4 lg:opacity-0 2xl:w-1/2"
+      class="cooperation-group mx-auto mt-10 items-center justify-between opacity-100 lg:flex lg:w-3/4 lg:opacity-0 2xl:w-1/2"
     >
       <div class="cooperation-item cooperation-item-1">
         <img
@@ -134,7 +134,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .identity {
-  @apply pt-2 text-center text-xl text-primary-normal  lg:text-4xl;
+  @apply pt-4 text-center text-xl text-primary-normal  lg:text-4xl;
 }
 
 .cooperation-item {

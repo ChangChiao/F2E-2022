@@ -4,12 +4,10 @@ import gsap from "gsap";
 onMounted(() => {
   document.body.style.overflow = "hidden";
   const tl = gsap.timeline();
-  tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 })
-    // .to(".loading-group", {
-    //   display: "none",
-    //   duration: 0.3,
-    // })
-    .to(".loading", { opacity: 0, duration: 0.3 });
+  tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 }).to(
+    ".loading",
+    { opacity: 0, duration: 0.3 }
+  );
 });
 
 onUnmounted(() => {
@@ -21,16 +19,13 @@ onUnmounted(() => {
   <div
     class="loading fixed top-0 left-0 z-[999] h-full w-full overflow-hidden bg-secondary-normal"
   >
-    <!-- <div
-      class="fixed top-0 bottom-0 left-0 right-0 w-full h-full m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
-    ></div> -->
     <div
       class="loading-group absolute top-0 bottom-0 left-0 right-0 m-auto h-[200px] w-[400px]"
     >
       <div class="player-group mx-auto min-h-[100px] w-[200px]">
         <div class="flex items-center justify-between">
           <img
-            class="translate-y-1 player-loading player-1"
+            class="player-loading player-1 translate-y-1"
             src="@/assets/character/character_f2e.gif"
             alt=""
           />
@@ -40,7 +35,7 @@ onUnmounted(() => {
             alt=""
           />
           <img
-            class="translate-y-3 player-loading player-3"
+            class="player-loading player-3 translate-y-3"
             src="@/assets/character/character_team.gif"
             alt=""
           />
@@ -50,10 +45,10 @@ onUnmounted(() => {
       <div
         class="loading mx-auto h-5 w-[90%] overflow-hidden rounded-2xl border-2 border-white lg:w-[400px]"
       >
-        <div class="w-0 h-full loading-bar bg-primary-normal"></div>
+        <div class="loading-bar h-full w-0 bg-primary-normal"></div>
       </div>
     </div>
-    <div class="opacity-0 img-preload"></div>
+    <div class="img-preload opacity-0"></div>
   </div>
 </template>
 

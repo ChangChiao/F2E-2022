@@ -111,7 +111,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="z-50 pointer-events-auto section banner section-end">
+  <section class="section banner section-end pointer-events-auto z-50">
     <div
       class="cloud-end fixed top-[30%] hidden w-full items-center justify-between opacity-0 lg:flex"
     >
@@ -119,7 +119,7 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
     <div
-      class="pattern relative left-0 right-0 z-[999] m-auto mx-auto w-3/5 translate-y-[65%] text-center opacity-0 lg:fixed lg:bottom-0 lg:top-0 lg:h-[800px] lg:w-[400px]"
+      class="pattern relative left-0 right-0 z-[999] m-auto mx-auto w-3/5 translate-y-[65%] text-center opacity-0 lg:fixed lg:bottom-0 lg:top-0 lg:h-[800px] lg:w-[400px] lg:translate-y-0"
     >
       <img src="@/assets/logo/logo.png" class="mb-4" alt="" />
       <a href="https://2022.thef2e.com/" target="_blank">
@@ -130,7 +130,7 @@ onMounted(() => {
       </a>
     </div>
     <img
-      class="fixed top-0 left-0 right-0 z-10 hidden h-screen mx-auto origin-center opacity-0 finish-bar lg:block"
+      class="finish-bar fixed top-0 left-0 right-0 z-10 mx-auto hidden h-screen origin-center opacity-0 lg:block"
       src="@/assets/main/finish.png"
       alt=""
     />
@@ -138,12 +138,12 @@ onMounted(() => {
       class="line fixed left-0 right-0 top-[60%] mx-auto hidden h-20 w-full origin-center items-center justify-center opacity-0 lg:flex"
     >
       <img
-        class="w-1/2 -mr-8 left-line"
+        class="left-line -mr-8 w-1/2"
         src="@/assets/main/finishLine_l.png"
         alt=""
       />
       <img
-        class="w-1/2 right-line"
+        class="right-line w-1/2"
         src="@/assets/main/finishLine_r.png"
         alt=""
       />

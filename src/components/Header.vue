@@ -3,6 +3,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { onMounted, ref } from "vue";
 gsap.registerPlugin(ScrollTrigger);
+const editUser = () => {
+  window.open("https://2022.thef2e.com/users", "_blank");
+};
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -34,9 +37,6 @@ onMounted(() => {
       },
       9.5
     );
-  const editUser = () => {
-    window.open("https://2022.thef2e.com/users", "_blank");
-  };
 });
 </script>
 
@@ -44,11 +44,11 @@ onMounted(() => {
   <header
     class="fixed top-0 z-[999] flex h-20 w-full items-center justify-between p-4 pt-2 lg:h-48"
   >
-    <div class="hidden w-40 opacity-0 header-logo lg:block">
+    <div class="header-logo hidden w-40 opacity-0 lg:block">
       <img class="" src="../assets/logo/logo.png" alt="" />
     </div>
     <img
-      class="relative block w-1/3 -translate-x-1/2 left-1/2 lg:hidden"
+      class="relative left-1/2 block w-1/3 -translate-x-1/2 lg:hidden"
       src="@/assets/logo/logo_text.png"
       alt=""
     />

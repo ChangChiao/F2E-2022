@@ -70,10 +70,10 @@ onMounted(() => {
 
 <template>
   <section
-    class="h-screen banner section-banner animate-mask bg-secondary-normal"
+    class="banner section-banner h-screen animate-mask bg-secondary-normal"
   >
     <img
-      class="fixed left-0 right-0 z-10 hidden h-screen mx-auto pointer-events-none bar lg:block"
+      class="bar pointer-events-none fixed left-0 right-0 z-10 mx-auto hidden h-screen lg:block"
       src="@/assets/main/start.png"
       alt=""
     />
@@ -85,18 +85,18 @@ onMounted(() => {
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
     <div
-      class="logo left-0 right-0 top-[5%] z-20 mx-auto w-3/4 max-w-[600px] pt-[20%] lg:fixed lg:w-1/2 lg:pt-0"
+      class="logo left-0 right-0 top-[4%] z-20 mx-auto w-3/4 max-w-[600px] pt-[20%] lg:fixed lg:w-1/2 lg:pt-0"
     >
       <img class="hidden lg:block" src="@/assets/logo/logo_text.png" alt="" />
       <img class="block lg:hidden" src="@/assets/logo/logo.png" alt="" />
       <h1
-        class="w-2/3 p-2 mx-auto text-xl tracking-wider text-center text-white rounded-3xl bg-highlight-normal lg:text-4xl"
+        class="mx-auto w-2/3 rounded-3xl bg-highlight-normal p-2 text-center text-xl tracking-wider text-white lg:text-4xl"
       >
         互動式網頁設計
       </h1>
     </div>
     <div
-      class="count-list top-[40%] left-0 right-0 m-auto flex max-w-[800px] flex-col items-center justify-between pt-[10%] text-xl lg:fixed lg:w-2/3 lg:-translate-y-10 lg:flex-row lg:pt-0"
+      class="count-list top-[36%] left-0 right-0 m-auto flex max-w-[800px] flex-col items-center justify-between pt-[10%] text-xl lg:fixed lg:w-2/3 lg:-translate-y-10 lg:flex-row lg:pt-0"
     >
       <Count class="mb-4 lg:mb-0" v-for="item in countList" :itemData="item" />
     </div>

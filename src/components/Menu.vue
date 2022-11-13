@@ -57,18 +57,20 @@ const getImg = (icon) => {
     ></div>
     <ul class="pt-12 text-center">
       <li
-        class="pb-10 cursor-pointer group text-secondary-normal"
+        class="group cursor-pointer pb-10 text-secondary-normal"
         v-for="(item, i) in menu"
         :key="`menu-${i}`"
       >
-        <img
-          class="w-12 mx-auto mb-2 group-hover:brightness-110"
-          :src="getImg(item.icon)"
-          alt=""
-        />
-        <span class="text-lg group-hover:brightness-110">
-          {{ item.title }}</span
-        >
+        <a :href="item.link" target="_blank">
+          <img
+            class="mx-auto mb-2 w-12 group-hover:brightness-110"
+            :src="getImg(item.icon)"
+            alt=""
+          />
+          <span class="text-lg group-hover:brightness-110">
+            {{ item.title }}</span
+          >
+        </a>
       </li>
     </ul>
   </nav>

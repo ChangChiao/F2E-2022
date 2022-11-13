@@ -144,8 +144,8 @@ onMounted(() => {
 
 <template>
   <div class="section section-feature">
-    <h2 class="opacity-0 title title-feature">你是否也有以下困擾？</h2>
-    <div class="items-center justify-between wrapper lg:flex">
+    <h2 class="title title-feature opacity-0">你是否也有以下困擾？</h2>
+    <div class="wrapper items-center justify-between lg:flex lg:pt-10">
       <div class="feature feature-1">
         <h3 class="slogan">羨慕別人的酷酷網頁動畫？</h3>
         <img
@@ -178,7 +178,7 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="fixed left-0 right-0 justify-between hidden w-2/3 mx-auto origin-bottom scale-125 grass-group -bottom-4 lg:flex"
+      class="grass-group fixed left-0 right-0 -bottom-4 mx-auto hidden w-2/3 origin-bottom scale-125 justify-between lg:flex"
     >
       <img class="w-1/6" src="@/assets/bg/bg_decorate_09.png" alt="" />
       <img class="w-1/6" src="@/assets/bg/bg_decorate_09.png" alt="" />

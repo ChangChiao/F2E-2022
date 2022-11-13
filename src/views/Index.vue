@@ -17,7 +17,6 @@ import Map from "@/components/layout/Map.vue";
 import End from "@/components/End.vue";
 import { useMedia } from "../hooks/useMedia";
 import Footer from "../components/Footer.vue";
-import AOS from "aos";
 import Loading from "@/components/common/Loading.vue";
 
 const isMobile = useMedia();
@@ -25,10 +24,6 @@ const isShowLoading = ref(true);
 let player = null;
 let windowWidth = 0;
 onMounted(() => {
-  if (isMobile.value) {
-    console.log("8888");
-    AOS.init();
-  }
   setTimeout(() => {
     isShowLoading.value = false;
   }, 2000);
