@@ -14,7 +14,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: ".section-level",
         scrub: true,
-        markers: true,
+        // markers: true,
         toggleClass: "active",
         start: "top center",
         end: "bottom bottom",
@@ -129,28 +129,28 @@ onMounted(() => {
 
 <template>
   <section class="section section-level">
-    <div class="opacity-0 title-level">
+    <div class="title-level opacity-0">
       <h2 class="title">年度最強合作，三大主題來襲</h2>
       <h3 class="sub-title">各路廠商強強聯手</h3>
       <h3 class="sub-title">共同設計出接地氣的網頁互動挑戰關卡</h3>
     </div>
     <div class="mx-auto h-auto w-3/4 lg:h-[50vh] lg:overflow-hidden">
-      <div class="opacity-100 level-list lg:opacity-0">
+      <div class="level-list opacity-100 lg:opacity-0">
         <div class="level level-1">
           <img class="level-icon" src="@/assets/main/week_1.png" alt="" />
           <div class="level-content">
             <h4 class="week">WEEK1</h4>
             <h5 class="level-name">The F2E 活動網站設計</h5>
             <div class="level-tag">
-              <span class="mr-2 hash-tag">Parallax Scrolling</span>
+              <span class="hash-tag mr-2">Parallax Scrolling</span>
               <span class="hash-tag">#版塊設計</span>
             </div>
             <button @click="toLink(1)" class="btn">查看關卡細節</button>
           </div>
         </div>
-        <div class="justify-end level level-2 lg:flex-row">
+        <div class="level level-2 justify-end lg:flex-row">
           <img
-            class="block level-icon lg:hidden"
+            class="level-icon block lg:hidden"
             src="@/assets/main/week_2.png"
             alt=""
           />
@@ -158,13 +158,13 @@ onMounted(() => {
             <h4 class="week">WEEK2</h4>
             <h5 class="level-name">今晚，我想來點點簽</h5>
             <div class="level-tag">
-              <span class="mr-2 hash-tag">Canvas</span>
+              <span class="hash-tag mr-2">Canvas</span>
               <span class="hash-tag">#凱鈿行動科技</span>
             </div>
             <button @click="toLink(2)" class="btn">查看關卡細節</button>
           </div>
           <img
-            class="hidden level-icon lg:block"
+            class="level-icon hidden lg:block"
             src="@/assets/main/week_2.png"
             alt=""
           />
@@ -175,7 +175,7 @@ onMounted(() => {
             <h4 class="week">WEEK3</h4>
             <h5 class="level-name">Scrum 新手村</h5>
             <div class="level-tag">
-              <span class="mr-2 hash-tag">JS draggable</span>
+              <span class="hash-tag mr-2">JS draggable</span>
               <span class="hash-tag">#鈦坦科技</span>
             </div>
             <button @click="toLink(3)" class="btn">查看關卡細節</button>
