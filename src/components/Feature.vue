@@ -178,7 +178,7 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="fixed bottom-0 left-0 right-0 justify-between hidden w-2/3 mx-auto origin-bottom scale-125 grass-group lg:flex"
+      class="fixed left-0 right-0 justify-between hidden w-2/3 mx-auto origin-bottom scale-125 grass-group -bottom-4 lg:flex"
     >
       <img class="w-1/6" src="@/assets/bg/bg_decorate_09.png" alt="" />
       <img class="w-1/6" src="@/assets/bg/bg_decorate_09.png" alt="" />

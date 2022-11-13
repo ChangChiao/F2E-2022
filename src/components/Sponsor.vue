@@ -155,7 +155,7 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="fixed bottom-0 left-0 right-0 flex justify-between w-2/3 mx-auto origin-bottom scale-125 opacity-0 tree-group"
+      class="fixed left-0 right-0 flex justify-between w-2/3 mx-auto origin-bottom scale-125 opacity-0 tree-group -bottom-4"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_04.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_08.png" alt="" />

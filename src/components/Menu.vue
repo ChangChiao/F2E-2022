@@ -40,7 +40,7 @@ const getImg = (icon) => {
   ></div>
   <nav
     :class="[
-      'fixed top-0 left-0 z-50 flex h-screen w-[150px]  justify-center bg-primary-normal duration-500 ',
+      'fixed top-0 left-0 z-[999] flex h-screen w-[150px]  justify-center bg-primary-normal duration-500 ',
       isShowMenu
         ? '-translate-x-[20px] lg:-translate-x-[20px]'
         : '-translate-x-[150px] lg:-translate-x-[140px]',

@@ -48,7 +48,7 @@ onMounted(() => {
       {
         opacity: 1,
         scale: 1,
-        duration: 2,
+        duration: 1,
       }
     )
     .fromTo(
@@ -59,7 +59,7 @@ onMounted(() => {
       {
         opacity: 1,
         scale: 1,
-        duration: 2,
+        duration: 1,
       },
       "<"
     )
@@ -67,15 +67,31 @@ onMounted(() => {
       xPercent: -5,
       duration: 1,
     })
+    .to(
+      ".right-line",
+      {
+        xPercent: 10,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(".left-line", {
+      xPercent: -20,
+      duration: 1,
+    })
     .to(".line", {
       scale: 1.5,
       duration: 1,
       opacity: 0,
     })
-    .to(".finish-bar", {
-      duration: 1,
-      opacity: 0,
-    })
+    .to(
+      ".finish-bar",
+      {
+        duration: 1,
+        opacity: 0,
+      },
+      "<"
+    )
     .to(".pattern", {
       opacity: 1,
       duration: 2,
@@ -84,17 +100,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="z-50 section banner section-end">
+  <section class="z-50 pointer-events-auto section banner section-end">
     <div
       class="cloud-end fixed top-[30%] hidden w-full items-center justify-between opacity-0 lg:flex"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
     </div>
-    <div class="pattern mx-auto w-[400px] pt-[5%] text-center opacity-0">
+    <div
+      class="pattern fixed left-0 right-0 bottom-0 top-0 z-[999] m-auto mx-auto h-[800px] w-[400px] text-center opacity-0"
+    >
       <img src="@/assets/logo/logo.png" class="mb-4" alt="" />
-      <JoinBtn size="big" :isShowHand="true" />
-      <h3 class="pt-2 text-5xl text-highlight-normal">立即報名</h3>
+      <a href="https://2022.thef2e.com/" target="_blank">
+        <JoinBtn size="big" :isShowHand="true" />
+        <h3 class="pt-2 text-5xl text-highlight-normal">立即報名</h3>
+      </a>
     </div>
     <img
       class="fixed top-0 left-0 right-0 z-10 hidden h-screen mx-auto origin-center opacity-0 finish-bar lg:block"
@@ -109,7 +129,11 @@ onMounted(() => {
         src="@/assets/main/finishLine_l.png"
         alt=""
       />
-      <img class="w-1/2" src="@/assets/main/finishLine_r.png" alt="" />
+      <img
+        class="w-1/2 right-line"
+        src="@/assets/main/finishLine_r.png"
+        alt=""
+      />
     </div>
   </section>
 </template>

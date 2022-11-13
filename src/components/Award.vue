@@ -61,6 +61,14 @@ onMounted(() => {
     1
   )
     .fromTo(
+      ".award-trophy-light",
+      { rotation: 720 },
+      {
+        rotation: 0,
+        duration: 3,
+      }
+    )
+    .fromTo(
       ".trophy",
       {
         xPercent: -50,
@@ -68,17 +76,16 @@ onMounted(() => {
       {
         opacity: 1,
         xPercent: 0,
-        duration: 3,
-      }
-    )
-    .fromTo(
-      ".award-trophy-light",
-      { rotation: 720 },
-      {
-        rotation: 0,
       },
       "<"
     )
+    // .fromTo(
+    //   ".award-trophy-light",
+    //   { rotation: 720 },
+    //   {
+    //     rotation: 0,
+    //   }
+    // )
     .fromTo(
       ".doc",
       {
@@ -91,6 +98,27 @@ onMounted(() => {
       }
     )
     .set({}, {}, "+=6")
+    .to(".doc", {
+      opacity: 0,
+      xPercent: 50,
+      duration: 2,
+    })
+
+    .to(
+      ".trophy",
+      {
+        opacity: 0,
+        xPercent: 50,
+      },
+      "<"
+    )
+    .to(
+      ".award-trophy-light",
+      {
+        rotation: 720,
+      },
+      "<"
+    )
     .to(".section-award", {
       opacity: 0,
     });

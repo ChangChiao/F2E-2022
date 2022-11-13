@@ -207,7 +207,7 @@ onMounted(() => {
         //end
         scale: 1,
       },
-      9
+      9.2
     )
     .to(
       ".player-group",
@@ -215,21 +215,13 @@ onMounted(() => {
         //end
         scale: 1.2,
       },
-      9.2
+      9.7
     )
     .to(
       ".player-group",
       {
         //end
         scale: 1.5,
-      },
-      9.5
-    )
-    .to(
-      ".player-group",
-      {
-        //end
-        scale: 3,
         opacity: 0,
       },
       10
@@ -269,10 +261,10 @@ onMounted(() => {
 
 .offset-left {
   .player-1 {
-    @apply -translate-x-3;
+    @apply -translate-x-2;
   }
   .player-2 {
-    @apply -translate-x-2;
+    @apply -translate-x-6;
   }
   .player-3 {
     @apply translate-x-4;
@@ -284,7 +276,7 @@ onMounted(() => {
     @apply -translate-x-5;
   }
   .player-2 {
-    @apply translate-x-3;
+    @apply translate-x-4;
   }
   .player-3 {
     @apply translate-x-2;

@@ -42,7 +42,7 @@ onMounted(() => {
 
 <template>
   <header
-    class="fixed top-0 z-40 flex items-center justify-between w-full h-20 p-4 pt-2 lg:h-48"
+    class="fixed top-0 z-[999] flex h-20 w-full items-center justify-between p-4 pt-2 lg:h-48"
   >
     <div class="hidden w-40 opacity-0 header-logo lg:block">
       <img class="" src="../assets/logo/logo.png" alt="" />

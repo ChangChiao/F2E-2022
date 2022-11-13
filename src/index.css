@@ -21,7 +21,7 @@
     @apply pointer-events-none mx-auto w-full  
     border-t-2 border-b-4 border-primary-normal bg-secondary-light  bg-contain  bg-center bg-no-repeat p-2 text-center text-2xl text-primary-normal  
     lg:h-36 lg:w-2/3 lg:max-w-[800px] lg:border-none lg:bg-transparent lg:bg-[url('@/assets/bg/bg_talking.png')] 
-    lg:pt-9 lg:text-4xl 2xl:h-40 2xl:w-full 2xl:pt-8 2xl:text-5xl;
+    lg:pt-9 lg:text-4xl 2xl:h-40 2xl:w-full 2xl:pt-12 2xl:text-5xl;
   }
   .sub-title {
     @apply text-xl text-center text-secondary-dark lg:text-2xl;

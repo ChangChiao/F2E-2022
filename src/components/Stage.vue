@@ -172,7 +172,7 @@ onMounted(() => {
     <div
       class="flex flex-col items-center justify-between w-3/4 mx-auto stage-group lg:flex-row"
     >
-      <div class="stage-item stage-item-1 lg:translate-y-10">
+      <div class="stage-item stage-item-1 lg:translate-y-[54px]">
         <div class="stage-item-content stage-item-content-1">
           <JoinBtn :isShowHand="true" />
           <h4 class="slogan">SIGN UP</h4>
