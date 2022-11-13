@@ -13,13 +13,11 @@ onMounted(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".section-level",
-        pin: false,
         scrub: true,
         markers: true,
         toggleClass: "active",
-        start: "top 65%",
-        end: "top 1%",
-        // end: "bottom bottom",
+        start: "top center",
+        end: "bottom bottom",
       },
     });
 
@@ -150,7 +148,12 @@ onMounted(() => {
             <button @click="toLink(1)" class="btn">查看關卡細節</button>
           </div>
         </div>
-        <div class="flex-col-reverse justify-end level level-2 lg:flex-row">
+        <div class="justify-end level level-2 lg:flex-row">
+          <img
+            class="block level-icon lg:hidden"
+            src="@/assets/main/week_2.png"
+            alt=""
+          />
           <div class="level-content">
             <h4 class="week">WEEK2</h4>
             <h5 class="level-name">今晚，我想來點點簽</h5>
@@ -160,7 +163,11 @@ onMounted(() => {
             </div>
             <button @click="toLink(2)" class="btn">查看關卡細節</button>
           </div>
-          <img class="level-icon" src="@/assets/main/week_2.png" alt="" />
+          <img
+            class="hidden level-icon lg:block"
+            src="@/assets/main/week_2.png"
+            alt=""
+          />
         </div>
         <div class="level level-3">
           <img class="level-icon" src="@/assets/main/week_3.png" alt="" />

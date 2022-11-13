@@ -79,7 +79,7 @@ onMounted(() => {
     />
 
     <div
-      class="cloud fixed top-[50%] flex w-full items-center justify-between lg:top-[30%]"
+      class="cloud absolute top-[50%] flex w-full items-center justify-between lg:fixed lg:top-[30%]"
     >
       <img class="w-1/4" src="@/assets/bg/bg_decorate_01.png" alt="" />
       <img class="w-1/4" src="@/assets/bg/bg_decorate_05.png" alt="" />
@@ -98,7 +98,7 @@ onMounted(() => {
     <div
       class="count-list top-[40%] left-0 right-0 m-auto flex max-w-[800px] flex-col items-center justify-between pt-[10%] text-xl lg:fixed lg:w-2/3 lg:-translate-y-10 lg:flex-row lg:pt-0"
     >
-      <Count v-for="item in countList" :itemData="item" />
+      <Count class="mb-4 lg:mb-0" v-for="item in countList" :itemData="item" />
     </div>
     <TraffictLight />
   </section>

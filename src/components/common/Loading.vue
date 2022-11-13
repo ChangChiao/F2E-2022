@@ -62,10 +62,6 @@ onUnmounted(() => {
   @apply relative z-10 w-1/3 duration-100;
 }
 
-/* .test {
-  clip-path: circle(20%);
-} */
-
 .img-preload {
   background-image: url("src/assets/btn/btn_user_h.png"),
     url("src/assets/btn/btn_burger_close_h.png"),

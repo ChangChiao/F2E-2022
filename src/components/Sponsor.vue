@@ -10,17 +10,16 @@ const toLink = (url) => {
   window.open(url, "_blank");
 };
 onMounted(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section-sponsors",
-      pin: !isMobile.value,
-      scrub: true,
-      pinSpacing: isMobile.value,
-      toggleClass: "active",
-    },
-  });
-
   if (isMobile.value) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-sponsors",
+        scrub: true,
+        toggleClass: "active",
+        start: "top center",
+        end: "bottom bottom",
+      },
+    });
     tl.from(".title-sponsor", {
       yPercent: -100,
     })
@@ -53,6 +52,16 @@ onMounted(() => {
       );
     return;
   }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-sponsors",
+      pin: true,
+      scrub: true,
+      pinSpacing: false,
+      toggleClass: "active",
+    },
+  });
 
   tl.fromTo(
     ".title-sponsor",
@@ -164,21 +173,23 @@ onMounted(() => {
 </template>
 <style scoped>
 .sponsor {
-  @apply cursor-pointer opacity-0;
+  @apply mx-auto mb-12 w-[200px] cursor-pointer opacity-0 lg:mb-0 lg:w-auto;
 }
 .sponsor-img {
   @apply mb-5
   flex
-  h-[250px]
-  w-[250px]  
-  cursor-pointer 
-  items-center
+  h-[200px]
+  w-[200px]  
+  cursor-pointer
+  items-center  
   justify-center 
-  overflow-hidden 
-  rounded-[32px]
-  bg-sponsor
+  overflow-hidden
+  rounded-[32px] 
+  bg-sponsor 
   bg-contain
-  hover:bg-sponsor-h;
+  hover:bg-sponsor-h
+  lg:h-[250px]
+  lg:w-[250px];
   img {
     @apply w-[80%];
   }

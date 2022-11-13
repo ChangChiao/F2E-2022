@@ -7,23 +7,31 @@ import { useMedia } from "../hooks/useMedia";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
+  if (isMobile.value) {
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".section-end",
+    //     scrub: true,
+    //     start: "bottom bottom",
+    //     // end: "bottom bottom",
+    //     toggleClass: "active",
+    //   },
+    // });
+    // tl.to(".pattern", {
+    //   opacity: 1,
+    //   duration: 3,
+    // });
+    return;
+  }
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-end",
-      pin: !isMobile.value,
+      pin: true,
       scrub: true,
-      // markers: true,
       toggleClass: "active",
     },
   });
-
-  if (isMobile.value) {
-    tl.to(".pattern", {
-      opacity: 1,
-      duration: 2,
-    });
-    return;
-  }
 
   tl.to(".cloud-end", {
     scale: 0.8,

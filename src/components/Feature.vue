@@ -187,7 +187,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .feature {
-  @apply mr-3 opacity-0;
+  @apply mx-auto w-[90%] opacity-0 lg:mr-3 lg:w-1/3;
 }
 .slogan {
   @apply pb-2 pt-10 text-center text-xl text-highlight-normal lg:pt-0 lg:text-4xl;

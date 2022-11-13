@@ -12,7 +12,8 @@ onMounted(() => {
         trigger: ".section-mur",
         scrub: true,
         markers: true,
-        start: "top bottom",
+        start: "top center",
+        end: "bottom bottom",
       },
     });
     tl.fromTo(
@@ -39,23 +40,13 @@ onMounted(() => {
 
   tl.fromTo(
     ".cloud-mur",
-    { scale: 1.2 },
+    { scale: 1.5 },
     {
       scale: 0.8,
       opacity: 0.8,
-      duration: 2,
+      duration: 4,
     }
   )
-    .to(".cloud-mur", {
-      scale: 0.5,
-      opacity: 0.5,
-      duration: 2,
-    })
-    .to(".cloud-mur", {
-      scale: 0.2,
-      opacity: 0,
-      duration: 2,
-    })
     .fromTo(
       ".title-mur",
       { scale: 4 },
@@ -70,7 +61,8 @@ onMounted(() => {
     .to(".title-mur", {
       opacity: 0,
       duration: 2,
-    });
+    })
+    .to(".cloud-mur", { opacity: 0 }, "<");
 });
 </script>
 

@@ -19,17 +19,17 @@ onMounted(() => {
     tl.to(
       ".player-group",
       {
-        scale: 0.3,
+        scale: 0.5,
         bottom: 0,
       },
-      0.5
+      1
     ).to(
       ".player-group",
       {
         scale: 0.5,
         bottom: 0,
       },
-      3
+      10
     );
     return;
   }

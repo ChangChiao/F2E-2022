@@ -83,7 +83,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="traffict-light fixed right-0 top-[48%] z-30 w-[275px] origin-right scale-50 md:scale-50 lg:scale-75 2xl:scale-100"
+    class="traffict-light fixed right-0 top-[60%] z-30 w-[275px] origin-right scale-[0.4] md:scale-50 lg:top-[48%] lg:scale-75 2xl:scale-100"
   >
     <div
       class="text-2xl tracking-wider text-center ready text-highlight-normal"

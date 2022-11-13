@@ -10,12 +10,12 @@ onMounted(() => {
   if (isMobile.value) {
     const tl = gsap.timeline({
       scrollTrigger: {
-        //   start: "top 35%",
+        // start: "top 35%",
         trigger: ".section-cooperation",
         pin: false,
         scrub: true,
         toggleClass: "active",
-        start: "top bottom",
+        start: "top center",
         end: "bottom bottom",
       },
     });
@@ -103,13 +103,13 @@ onMounted(() => {
           alt=""
         />
         <div class="cooperation-item-btn">
-          <JoinBtn />
+          <JoinBtn :is-show-hand="isMobile" />
           <h4 class="identity">前端工程師</h4>
         </div>
       </div>
       <div class="cooperation-item cooperation-item-2">
         <div class="cooperation-item-btn">
-          <JoinBtn />
+          <JoinBtn :is-show-hand="isMobile" />
           <h4 class="identity">UI設計師</h4>
         </div>
         <img
@@ -125,7 +125,7 @@ onMounted(() => {
           alt=""
         />
         <div class="cooperation-item-btn">
-          <JoinBtn />
+          <JoinBtn :is-show-hand="isMobile" />
           <h4 class="identity">團體組（ＵＩ＋前端）</h4>
         </div>
       </div>
@@ -134,11 +134,11 @@ onMounted(() => {
 </template>
 <style scoped>
 .identity {
-  @apply pt-2 text-center text-4xl  text-primary-normal;
+  @apply pt-2 text-center text-xl text-primary-normal  lg:text-4xl;
 }
 
 .cooperation-item {
-  @apply flex w-full items-center justify-center lg:w-1/3;
+  @apply mx-auto flex w-[90%] items-center justify-center lg:w-1/3;
   &-btn {
     @apply w-1/2 lg:w-auto;
   }

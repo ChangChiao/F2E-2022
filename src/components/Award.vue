@@ -6,29 +6,40 @@ import { useMedia } from "../hooks/useMedia";
 gsap.registerPlugin(ScrollTrigger);
 const isMobile = useMedia();
 onMounted(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      //   start: "top 35%",
-      trigger: ".section-award",
-      pin: !isMobile.value,
-      scrub: true,
-      pinSpacing: isMobile.value,
-      toggleClass: "active",
-    },
-  });
-
   if (isMobile.value) {
-    tl.from(".title-award", {
-      yPercent: -100,
-    })
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-award",
+        pin: false,
+        scrub: true,
+        toggleClass: "active",
+        start: "top center",
+        end: "bottom bottom",
+      },
+    });
+    tl.fromTo(
+      ".title-award",
+      {
+        yPercent: -100,
+      },
+      { yPercent: 0, opacity: 1 }
+    )
+      .fromTo(
+        ".award-trophy-light",
+        { rotation: 720 },
+        {
+          rotation: 0,
+          duration: 3,
+        }
+      )
       .fromTo(
         ".trophy",
         { yPercent: 100 },
         {
           yPercent: 0,
           opacity: 1,
-          duration: 2,
-        }
+        },
+        "<"
       )
       .fromTo(
         ".rule",
@@ -51,6 +62,15 @@ onMounted(() => {
     return;
   }
 
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-award",
+      pin: true,
+      scrub: true,
+      pinSpacing: false,
+      toggleClass: "active",
+    },
+  });
   tl.fromTo(
     ".title-award",
     { opacity: 0 },
@@ -130,8 +150,10 @@ onMounted(() => {
     <div class="title-award">
       <h2 class="title">還有比賽等著你！</h2>
     </div>
-    <div class="items-center justify-center w-2/3 pt-10 mx-auto lg:flex">
-      <div class="trophy relative w-[375px] opacity-0">
+    <div
+      class="mx-auto flex w-[90%] flex-col items-center justify-center pt-10 lg:w-2/3 lg:flex-row"
+    >
+      <div class="trophy relative w-full opacity-0 lg:w-[375px]">
         <img
           class="award-trophy-light"
           src="@/assets/main/award_light.png"
@@ -143,7 +165,7 @@ onMounted(() => {
           alt=""
         />
       </div>
-      <div class="pl-20 opacity-100 doc lg:opacity-0">
+      <div class="opacity-100 doc lg:pl-20 lg:opacity-0">
         <div class="doc-item rule">
           <h3 class="award-title">評審機制</h3>
           <ul>
@@ -176,16 +198,16 @@ onMounted(() => {
 </template>
 <style scoped>
 .award-title {
-  @apply pb-2 text-4xl  text-highlight-normal;
+  @apply pb-4 text-2xl text-highlight-normal  lg:text-4xl;
 }
 .money {
-  @apply text-2xl text-highlight-normal;
+  @apply text-lg text-highlight-normal lg:text-2xl;
 }
 .award-item {
-  @apply text-2xl text-primary-normal;
+  @apply text-lg text-primary-normal lg:text-2xl;
 }
 
 .doc-item {
-  @apply pb-4 opacity-0 lg:opacity-100;
+  @apply pb-8 opacity-0 lg:opacity-100;
 }
 </style>
