@@ -1,12 +1,13 @@
-# 🏠 F2E 2022 Week1-The F2E 前端 & UI 修煉精神時光屋
+# 🏠 F2E 2022 Week1 - Parallax Scrolling
 
 ## Demo
 
-👉 [The F2E 活動網站](https://changchiao.github.io/bus_timetable/#/)
+👉 [作品連結](https://f2-e-2022.vercel.app/)
 
 ## 作品說明
 
-![image](./readme/cover.PNG)
+使用視差滾動製作 f2e 活動官網
+![image](./readme/cover.png)
 
 ## Designer
 
