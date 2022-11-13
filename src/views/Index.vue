@@ -55,7 +55,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <Loading v-if="isShowLoading" />
   <div @mousemove="handleMouseMove">
     <Header />
     <Menu />
@@ -73,6 +72,7 @@ onMounted(() => {
     <Map />
     <Footer />
   </div>
+  <Loading v-if="isShowLoading" />
 </template>
 
 <style scoped></style>

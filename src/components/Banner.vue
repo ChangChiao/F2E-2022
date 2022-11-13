@@ -69,7 +69,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="h-screen banner section-banner">
+  <section
+    class="h-screen banner section-banner animate-mask bg-secondary-normal"
+  >
     <img
       class="fixed left-0 right-0 z-10 hidden h-screen mx-auto pointer-events-none bar lg:block"
       src="@/assets/main/start.png"

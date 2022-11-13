@@ -5,11 +5,11 @@ onMounted(() => {
   document.body.style.overflow = "hidden";
   const tl = gsap.timeline();
   tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 })
-    .to(".loading-group", {
-      display: "none",
-      duration: 0.3,
-    })
-    .to(".loading", { scale: 0, duration: 0.5 });
+    // .to(".loading-group", {
+    //   display: "none",
+    //   duration: 0.3,
+    // })
+    .to(".loading", { opacity: 0, duration: 0.3 });
 });
 
 onUnmounted(() => {
@@ -18,10 +18,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 z-[999] h-full w-full overflow-hidden">
-    <div
+  <div
+    class="loading fixed top-0 left-0 z-[999] h-full w-full overflow-hidden bg-secondary-normal"
+  >
+    <!-- <div
       class="fixed top-0 bottom-0 left-0 right-0 w-full h-full m-auto origin-center scale-150 border rounded-full loading bg-secondary-normal"
-    ></div>
+    ></div> -->
     <div
       class="loading-group absolute top-0 bottom-0 left-0 right-0 m-auto h-[200px] w-[400px]"
     >
@@ -60,9 +62,9 @@ onUnmounted(() => {
   @apply relative z-10 w-1/3 duration-100;
 }
 
-.test {
+/* .test {
   clip-path: circle(20%);
-}
+} */
 
 .img-preload {
   background-image: url("src/assets/btn/btn_user_h.png"),

@@ -34,10 +34,15 @@ module.exports = {
         "0%": { transform: "translateY(-6px)" },
         "100%": { transform: "translateY(0)" },
       },
+      mask: {
+        "0%": { "clip-path": "circle(5% at 50% 50%)" },
+        "100%": { "clip-path": "circle(100% at 50% 50%)" },
+      },
     },
     animation: {
       enlarge: "enlarge 1s linear infinite",
       jump: "jump 0.1s linear infinite alternate",
+      mask: "mask 1s linear 1s",
     },
     backgroundImage: {
       sponsor: "url(/src/assets/btn/btn_sponsor.png)",
