@@ -53,7 +53,7 @@ onMounted(() => {
   <div @mousemove="handleMouseMove">
     <Header />
     <Menu />
-    <Banner />
+    <Banner :isShowLoading="isShowLoading" />
     <Player />
     <Feature />
 

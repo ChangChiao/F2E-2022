@@ -7,12 +7,17 @@ import { useMedia } from "../hooks/useMedia";
 import Count from "./banner/Count.vue";
 const isMobile = useMedia();
 gsap.registerPlugin(ScrollTrigger);
-
 const countList = [
   { title: "前端工程師", count: "920" },
   { title: "UI設計師", count: "110" },
   { title: "團體組", count: "47" },
 ];
+
+const props = defineProps({
+  isShowLoading: {
+    type: Boolean,
+  },
+});
 
 onMounted(() => {
   if (isMobile.value) return;
@@ -70,7 +75,10 @@ onMounted(() => {
 
 <template>
   <section
-    class="h-screen banner section-banner animate-mask bg-secondary-normal"
+    :class="[
+      !isShowLoading && 'animate-mask',
+      'banner section-banner h-screen bg-secondary-normal',
+    ]"
   >
     <img
       class="fixed left-0 right-0 z-10 hidden h-screen mx-auto pointer-events-none bar lg:block"

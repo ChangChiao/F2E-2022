@@ -42,7 +42,7 @@ module.exports = {
     animation: {
       enlarge: "enlarge 1s linear infinite",
       jump: "jump 0.1s linear infinite alternate",
-      mask: "mask 1s linear 1.4s",
+      mask: "mask 1s linear",
     },
     backgroundImage: {
       sponsor: "url(/src/assets/btn/btn_sponsor.png)",
