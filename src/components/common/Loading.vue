@@ -4,10 +4,11 @@ import gsap from "gsap";
 onMounted(() => {
   document.body.style.overflow = "hidden";
   const tl = gsap.timeline();
-  tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 }).to(
-    ".loading",
-    { opacity: 0, duration: 0.3 }
-  );
+  tl.to(".loading-bar", { width: "100%", duration: 1, delay: 0.5 });
+  // .to(
+  //   ".loading",
+  //   { opacity: 0, duration: 1 }
+  // );
 });
 
 onUnmounted(() => {
@@ -25,7 +26,7 @@ onUnmounted(() => {
       <div class="player-group mx-auto min-h-[100px] w-[200px]">
         <div class="flex items-center justify-between">
           <img
-            class="player-loading player-1 translate-y-1"
+            class="translate-y-1 player-loading player-1"
             src="@/assets/character/character_f2e.gif"
             alt=""
           />
@@ -35,7 +36,7 @@ onUnmounted(() => {
             alt=""
           />
           <img
-            class="player-loading player-3 translate-y-3"
+            class="translate-y-3 player-loading player-3"
             src="@/assets/character/character_team.gif"
             alt=""
           />
@@ -45,10 +46,10 @@ onUnmounted(() => {
       <div
         class="loading mx-auto h-5 w-[90%] overflow-hidden rounded-2xl border-2 border-white lg:w-[400px]"
       >
-        <div class="loading-bar h-full w-0 bg-primary-normal"></div>
+        <div class="w-0 h-full loading-bar bg-primary-normal"></div>
       </div>
     </div>
-    <div class="img-preload opacity-0"></div>
+    <div class="opacity-0 img-preload"></div>
   </div>
 </template>
 
