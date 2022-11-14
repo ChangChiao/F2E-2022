@@ -70,10 +70,10 @@ onMounted(() => {
 
 <template>
   <section
-    class="banner section-banner h-screen animate-mask bg-secondary-normal"
+    class="h-screen banner section-banner animate-mask bg-secondary-normal"
   >
     <img
-      class="bar pointer-events-none fixed left-0 right-0 z-10 mx-auto hidden h-screen lg:block"
+      class="fixed left-0 right-0 z-10 hidden h-screen mx-auto pointer-events-none bar lg:block"
       src="@/assets/main/start.png"
       alt=""
     />
@@ -90,7 +90,7 @@ onMounted(() => {
       <img class="hidden lg:block" src="@/assets/logo/logo_text.png" alt="" />
       <img class="block lg:hidden" src="@/assets/logo/logo.png" alt="" />
       <h1
-        class="mx-auto w-2/3 rounded-3xl bg-highlight-normal p-2 text-center text-xl tracking-wider text-white lg:text-4xl"
+        class="w-2/3 p-2 mx-auto text-xl tracking-wider text-center text-white rounded-3xl bg-highlight-normal lg:text-4xl"
       >
         互動式網頁設計
       </h1>
